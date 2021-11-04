@@ -58,6 +58,22 @@ public abstract class AbstractPacket {
 	}
 
 	/**
+	 * Send the current packet to the given receivers.
+	 * @param receivers - as many receivers as you wish :D
+	 * @throws RuntimeException If the packet cannot be sent.
+	 */
+	public void sendPacket(Player... receivers) {
+		for (Player player : receivers) {
+			try {
+				ProtocolLibrary.getProtocolManager().sendServerPacket(player,
+						getHandle());
+			} catch (InvocationTargetException e) {
+				throw new RuntimeException("Cannot send packet.", e);
+			}
+		}
+	}
+
+	/**
 	 * Send the current packet to the given receiver.
 	 * 
 	 * @param receiver - the receiver.
