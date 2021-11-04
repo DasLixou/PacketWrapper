@@ -24,11 +24,7 @@ This Projekt is a fork and addition of this [Project](https://github.com/stevieb
 ````java
     new WrapperPlayServerEntityTeleport()
         .setEntityID(entityPlayer.getId())
-        .setX(location.getX())
-        .setY(location.getY())
-        .setZ(location.getZ())
-        .setYaw(location.getYaw())
-        .setPitch(location.getPitch())
+        .fromLocation(location)
         .setOnGround(false)
         .sendPacket(player1, player2);
 ````

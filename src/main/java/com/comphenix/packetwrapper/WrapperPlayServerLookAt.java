@@ -23,6 +23,7 @@ import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.utility.MinecraftReflection;
 
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 
@@ -115,6 +116,30 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
 	public WrapperPlayServerLookAt setTargetZ(double value) {
 		handle.getDoubles().write(2, value);
 		return this;
+	}
+
+	/**
+	 * Sets X, Y and Z from your location
+	 * @param location Your input
+	 * @return
+	 */
+	public WrapperPlayServerLookAt fromLocation(Location location) {
+		setTargetX(location.getX());
+		setTargetY(location.getY());
+		setTargetZ(location.getZ());
+		return this;
+	}
+
+	/**
+	 * Updates X, Y and Z of your input and returns it.
+	 * @param location old location, which gets updated.
+	 * @return
+	 */
+	public Location updateLocation(Location location) {
+		location.setX(getTargetX());
+		location.setY(getTargetY());
+		location.setZ(getTargetZ());
+		return location;
 	}
 
 	/**

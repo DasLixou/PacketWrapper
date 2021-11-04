@@ -23,6 +23,7 @@ import java.util.List;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.BlockPosition;
+import org.bukkit.Location;
 
 public class WrapperPlayServerExplosion extends AbstractPacket {
 	public static final PacketType TYPE = PacketType.Play.Server.EXPLOSION;
@@ -91,6 +92,30 @@ public class WrapperPlayServerExplosion extends AbstractPacket {
 	public WrapperPlayServerExplosion setZ(double value) {
 		handle.getDoubles().write(2, value);
 		return this;
+	}
+
+	/**
+	 * Sets X, Y and Z from your location
+	 * @param location Your input
+	 * @return
+	 */
+	public WrapperPlayServerExplosion fromLocation(Location location) {
+		setX(location.getX());
+		setY(location.getY());
+		setZ(location.getZ());
+		return this;
+	}
+
+	/**
+	 * Updates X, Y and Z of your input and returns it.
+	 * @param location old location, which gets updated.
+	 * @return
+	 */
+	public Location updateLocation(Location location) {
+		location.setX(getX());
+		location.setY(getY());
+		location.setZ(getZ());
+		return location;
 	}
 
 	/**

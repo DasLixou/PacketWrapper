@@ -18,6 +18,7 @@
  */
 package com.comphenix.packetwrapper;
 
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 
@@ -140,6 +141,30 @@ public class WrapperPlayServerSpawnEntityExperienceOrb extends AbstractPacket {
 	public WrapperPlayServerSpawnEntityExperienceOrb setZ(double value) {
 		handle.getDoubles().write(2, value);
 		return this;
+	}
+
+	/**
+	 * Sets X, Y and Z from your location
+	 * @param location Your input
+	 * @return
+	 */
+	public WrapperPlayServerSpawnEntityExperienceOrb fromLocation(Location location) {
+		setX(location.getX());
+		setY(location.getY());
+		setZ(location.getZ());
+		return this;
+	}
+
+	/**
+	 * Updates X, Y and Z of your input and returns it.
+	 * @param location old location, which gets updated.
+	 * @return
+	 */
+	public Location updateLocation(Location location) {
+		location.setX(getX());
+		location.setY(getY());
+		location.setZ(getZ());
+		return location;
 	}
 
 	/**

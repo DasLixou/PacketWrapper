@@ -18,6 +18,7 @@
  */
 package com.comphenix.packetwrapper;
 
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 
@@ -90,6 +91,20 @@ public class WrapperPlayServerEntityHeadRotation extends AbstractPacket {
 		return handle.getBytes().read(0);
 	}
 
+	public float getYaw() {
+		return (handle.getBytes().read(0) * 360.F) / 256.0F;
+	}
+
+	/**
+	 * Set Head Yaw.
+	 *
+	 * @param value - new value.
+	 */
+	public WrapperPlayServerEntityHeadRotation setYaw(float value) {
+		handle.getBytes().write(0, (byte) (value * 256.0F / 360.0F));
+		return this;
+	}
+
 	/**
 	 * Set Head Yaw.
 	 * 
@@ -98,5 +113,25 @@ public class WrapperPlayServerEntityHeadRotation extends AbstractPacket {
 	public WrapperPlayServerEntityHeadRotation setHeadYaw(byte value) {
 		handle.getBytes().write(0, value);
 		return this;
+	}
+
+	/**
+	 * Sets Yaw from your location
+	 * @param location Your input
+	 * @return
+	 */
+	public WrapperPlayServerEntityHeadRotation fromLocation(Location location) {
+		setYaw(location.getYaw());
+		return this;
+	}
+
+	/**
+	 * Updates Yaw of your input and returns it.
+	 * @param location old location, which gets updated.
+	 * @return
+	 */
+	public Location updateLocation(Location location) {
+		location.setYaw(getYaw());
+		return location;
 	}
 }

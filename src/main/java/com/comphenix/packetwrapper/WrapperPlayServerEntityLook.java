@@ -18,6 +18,7 @@
  */
 package com.comphenix.packetwrapper;
 
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 
@@ -114,6 +115,28 @@ public class WrapperPlayServerEntityLook extends AbstractPacket {
 	public WrapperPlayServerEntityLook setPitch(float value) {
 		handle.getBytes().write(1, (byte) (value * 256.0F / 360.0F));
 		return this;
+	}
+
+	/**
+	 * Sets Yaw and Pitch from your location
+	 * @param location Your input
+	 * @return
+	 */
+	public WrapperPlayServerEntityLook fromLocation(Location location) {
+		setYaw(location.getYaw());
+		setPitch(location.getPitch());
+		return this;
+	}
+
+	/**
+	 * Updates Yaw and Pitch of your input and returns it.
+	 * @param location old location, which gets updated.
+	 * @return
+	 */
+	public Location updateLocation(Location location) {
+		location.setYaw(getYaw());
+		location.setPitch(getPitch());
+		return location;
 	}
 
 	/**

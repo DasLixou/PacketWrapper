@@ -20,6 +20,7 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import org.bukkit.Location;
 
 public class WrapperPlayClientVehicleMove extends AbstractPacket {
 
@@ -137,6 +138,30 @@ public class WrapperPlayClientVehicleMove extends AbstractPacket {
 	public WrapperPlayClientVehicleMove setPitch(float value) {
 		handle.getFloat().write(1, value);
 		return this;
+	}
+
+	/**
+	 * Sets X, Y and Z from your location
+	 * @param location Your input
+	 * @return
+	 */
+	public WrapperPlayClientVehicleMove fromLocation(Location location) {
+		setX(location.getX()).setY(location.getY()).setZ(location.getZ()).setPitch(location.getPitch()).setYaw(location.getYaw());
+		return this;
+	}
+
+	/**
+	 * Updates X, Y and Z of your input and returns it.
+	 * @param location old location, which gets updated.
+	 * @return
+	 */
+	public Location updateLocation(Location location) {
+		location.setX(getX());
+		location.setY(getY());
+		location.setZ(getZ());
+		location.setYaw(getYaw());
+		location.setPitch(getPitch());
+		return location;
 	}
 
 }

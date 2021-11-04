@@ -25,6 +25,7 @@ import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.reflect.StructureModifier;
 import com.comphenix.protocol.utility.MinecraftReflection;
 import com.comphenix.protocol.wrappers.EnumWrappers;
+import org.bukkit.Location;
 
 public class WrapperPlayServerPosition extends AbstractPacket {
 	public static final PacketType TYPE = PacketType.Play.Server.POSITION;
@@ -141,6 +142,34 @@ public class WrapperPlayServerPosition extends AbstractPacket {
 	public WrapperPlayServerPosition setPitch(float value) {
 		handle.getFloat().write(1, value);
 		return this;
+	}
+
+	/**
+	 * Sets X, Y, Z, Yaw and Pitch from your location
+	 * @param location Your input
+	 * @return
+	 */
+	public WrapperPlayServerPosition fromLocation(Location location) {
+		setX(location.getX());
+		setY(location.getY());
+		setZ(location.getZ());
+		setYaw(location.getYaw());
+		setPitch(location.getPitch());
+		return this;
+	}
+
+	/**
+	 * Updates X, Y, Z, Yaw and Pitch of your input and returns it.
+	 * @param location old location, which gets updated.
+	 * @return
+	 */
+	public Location updateLocation(Location location) {
+		location.setX(getX());
+		location.setY(getY());
+		location.setZ(getZ());
+		location.setYaw(getYaw());
+		location.setPitch(getPitch());
+		return location;
 	}
 
 	private static final Class<?> FLAGS_CLASS = MinecraftReflection

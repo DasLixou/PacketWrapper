@@ -21,6 +21,7 @@ package com.comphenix.packetwrapper;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.WrappedParticle;
+import org.bukkit.Location;
 
 public class WrapperPlayServerWorldParticles extends AbstractPacket {
 	public static final PacketType TYPE =
@@ -115,6 +116,30 @@ public class WrapperPlayServerWorldParticles extends AbstractPacket {
 	public WrapperPlayServerWorldParticles setZ(double value) {
 		handle.getDoubles().write(2, value);
 		return this;
+	}
+
+	/**
+	 * Sets X, Y and Z from your location
+	 * @param location Your input
+	 * @return
+	 */
+	public WrapperPlayServerWorldParticles fromLocation(Location location) {
+		setX(location.getX());
+		setY(location.getY());
+		setZ(location.getZ());
+		return this;
+	}
+
+	/**
+	 * Updates X, Y and Z of your input and returns it.
+	 * @param location old location, which gets updated.
+	 * @return
+	 */
+	public Location updateLocation(Location location) {
+		location.setX(getX());
+		location.setY(getY());
+		location.setZ(getZ());
+		return location;
 	}
 
 	/**

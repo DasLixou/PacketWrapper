@@ -20,6 +20,7 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import org.bukkit.Location;
 
 public class WrapperPlayClientPosition extends AbstractPacket {
 	public static final PacketType TYPE = PacketType.Play.Client.POSITION;
@@ -95,6 +96,28 @@ public class WrapperPlayClientPosition extends AbstractPacket {
 	public WrapperPlayClientPosition setZ(double value) {
 		handle.getDoubles().write(2, value);
 		return this;
+	}
+
+	/**
+	 * Sets X, Y and Z from your location
+	 * @param location Your input
+	 * @return
+	 */
+	public WrapperPlayClientPosition fromLocation(Location location) {
+		setX(location.getX()).setY(location.getY()).setZ(location.getZ());
+		return this;
+	}
+
+	/**
+	 * Updates X, Y and Z of your input and returns it.
+	 * @param location old location, which gets updated.
+	 * @return
+	 */
+	public Location updateLocation(Location location) {
+		location.setX(getX());
+		location.setY(getY());
+		location.setZ(getZ());
+		return location;
 	}
 
 	/**

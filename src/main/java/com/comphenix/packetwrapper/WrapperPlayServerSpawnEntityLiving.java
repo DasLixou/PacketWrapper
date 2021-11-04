@@ -20,6 +20,7 @@ package com.comphenix.packetwrapper;
 
 import java.util.UUID;
 
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -229,6 +230,34 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 	public WrapperPlayServerSpawnEntityLiving setPitch(float value) {
 		handle.getBytes().write(1, (byte) (value * 256.0F / 360.0F));
 		return this;
+	}
+
+	/**
+	 * Sets X, Y, Z, Yaw and Pitch from your location
+	 * @param location Your input
+	 * @return
+	 */
+	public WrapperPlayServerSpawnEntityLiving fromLocation(Location location) {
+		setX(location.getX());
+		setY(location.getY());
+		setZ(location.getZ());
+		setYaw(location.getYaw());
+		setPitch(location.getPitch());
+		return this;
+	}
+
+	/**
+	 * Updates X, Y, Z, Yaw and Pitch of your input and returns it.
+	 * @param location old location, which gets updated.
+	 * @return
+	 */
+	public Location updateLocation(Location location) {
+		location.setX(getX());
+		location.setY(getY());
+		location.setZ(getZ());
+		location.setYaw(getYaw());
+		location.setPitch(getPitch());
+		return location;
 	}
 
 	/**
