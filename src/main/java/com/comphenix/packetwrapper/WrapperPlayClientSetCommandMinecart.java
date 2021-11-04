@@ -68,8 +68,9 @@ public class WrapperPlayClientSetCommandMinecart extends AbstractPacket {
      * Set Entity ID.
      * @param value - new value.
      */
-    public void setEntityID(int value) {
+    public WrapperPlayClientSetCommandMinecart setEntityID(int value) {
         handle.getIntegers().write(0, value);
+        return this;
     }
     
     /**
@@ -84,8 +85,9 @@ public class WrapperPlayClientSetCommandMinecart extends AbstractPacket {
      * Set Command.
      * @param value - new value.
      */
-    public void setCommand(String value) {
+    public WrapperPlayClientSetCommandMinecart setCommand(String value) {
         handle.getStrings().write(0, value);
+        return this;
     }
     
     /**
@@ -102,8 +104,9 @@ public class WrapperPlayClientSetCommandMinecart extends AbstractPacket {
      * Set Track Output.
      * @param value - new value.
      */
-    public void setTrackOutput(boolean value) {
+    public WrapperPlayClientSetCommandMinecart setTrackOutput(boolean value) {
         handle.getBooleans().write(0, value);
+        return this;
     }
     
 }

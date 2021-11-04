@@ -38,16 +38,18 @@ public class WrapperPlayServerTabComplete extends AbstractPacket {
 		return handle.getIntegers().read(0);
 	}
 
-	public void setTransactionId(int value) {
+	public WrapperPlayServerTabComplete setTransactionId(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	public Suggestions getSuggestions() {
 		return handle.getSpecificModifier(Suggestions.class).read(0);
 	}
 
-	public void setSuggestions(Suggestions value) {
+	public WrapperPlayServerTabComplete setSuggestions(Suggestions value) {
 		handle.getSpecificModifier(Suggestions.class).write(0, value);
+		return this;
 	}
 
 }

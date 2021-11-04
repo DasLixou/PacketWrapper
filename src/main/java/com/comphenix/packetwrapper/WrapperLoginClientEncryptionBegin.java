@@ -48,8 +48,9 @@ public class WrapperLoginClientEncryptionBegin extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setSharedSecret(byte[] value) {
+	public WrapperLoginClientEncryptionBegin setSharedSecret(byte[] value) {
 		handle.getByteArrays().write(0, value);
+		return this;
 	}
 
 	/**
@@ -66,7 +67,8 @@ public class WrapperLoginClientEncryptionBegin extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setVerifyToken(byte[] value) {
+	public WrapperLoginClientEncryptionBegin setVerifyToken(byte[] value) {
 		handle.getByteArrays().write(1, value);
+		return this;
 	}
 }

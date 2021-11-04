@@ -50,8 +50,9 @@ public class WrapperPlayServerOpenWindowHorse extends AbstractPacket {
      * Set Window ID?.
      * @param value - new value.
      */
-    public void setWindowId(int value) {
+    public WrapperPlayServerOpenWindowHorse setWindowId(int value) {
         handle.getIntegers().write(0, value);
+        return this;
     }
     
     /**
@@ -66,8 +67,9 @@ public class WrapperPlayServerOpenWindowHorse extends AbstractPacket {
      * Set Number of slots?.
      * @param value - new value.
      */
-    public void setNumberOfSlots(int value) {
+    public WrapperPlayServerOpenWindowHorse setNumberOfSlots(int value) {
         handle.getIntegers().write(1, value);
+        return this;
     }
     
     /**
@@ -100,8 +102,9 @@ public class WrapperPlayServerOpenWindowHorse extends AbstractPacket {
      * Set Entity ID?.
      * @param value - new value.
      */
-    public void setEntityID(int value) {
+    public WrapperPlayServerOpenWindowHorse setEntityID(int value) {
         handle.getIntegers().write(2, value);
+        return this;
     }
     
 }

@@ -54,8 +54,9 @@ public class WrapperPlayServerEntityVelocity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerEntityVelocity setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -92,8 +93,9 @@ public class WrapperPlayServerEntityVelocity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setVelocityX(double value) {
+	public WrapperPlayServerEntityVelocity setVelocityX(double value) {
 		handle.getIntegers().write(1, (int) (value * 8000.0D));
+		return this;
 	}
 
 	/**
@@ -110,8 +112,9 @@ public class WrapperPlayServerEntityVelocity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setVelocityY(double value) {
+	public WrapperPlayServerEntityVelocity setVelocityY(double value) {
 		handle.getIntegers().write(2, (int) (value * 8000.0D));
+		return this;
 	}
 
 	/**
@@ -128,7 +131,8 @@ public class WrapperPlayServerEntityVelocity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setVelocityZ(double value) {
+	public WrapperPlayServerEntityVelocity setVelocityZ(double value) {
 		handle.getIntegers().write(3, (int) (value * 8000.0D));
+		return this;
 	}
 }

@@ -50,8 +50,9 @@ public class WrapperPlayClientSettings extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setLocale(String value) {
+	public WrapperPlayClientSettings setLocale(String value) {
 		handle.getStrings().write(0, value);
+		return this;
 	}
 
 	/**
@@ -70,8 +71,9 @@ public class WrapperPlayClientSettings extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setViewDistance(byte value) {
+	public WrapperPlayClientSettings setViewDistance(byte value) {
 		handle.getIntegers().write(0, (int) value);
+		return this;
 	}
 
 	/**
@@ -90,8 +92,9 @@ public class WrapperPlayClientSettings extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setChatFlags(ChatVisibility value) {
+	public WrapperPlayClientSettings setChatFlags(ChatVisibility value) {
 		handle.getChatVisibilities().write(0, value);
+		return this;
 	}
 
 	/**
@@ -110,8 +113,9 @@ public class WrapperPlayClientSettings extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setChatColours(boolean value) {
+	public WrapperPlayClientSettings setChatColours(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 
 	/**
@@ -130,8 +134,9 @@ public class WrapperPlayClientSettings extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setDisplayedSkinParts(int value) {
+	public WrapperPlayClientSettings setDisplayedSkinParts(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 }

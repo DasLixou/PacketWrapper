@@ -49,8 +49,9 @@ public class WrapperPlayServerTitle extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setAction(TitleAction value) {
+	public WrapperPlayServerTitle setAction(TitleAction value) {
 		handle.getTitleActions().write(0, value);
+		return this;
 	}
 
 	/**
@@ -69,8 +70,9 @@ public class WrapperPlayServerTitle extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setTitle(WrappedChatComponent value) {
+	public WrapperPlayServerTitle setTitle(WrappedChatComponent value) {
 		handle.getChatComponents().write(0, value);
+		return this;
 	}
 
 	/**
@@ -89,8 +91,9 @@ public class WrapperPlayServerTitle extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setFadeIn(int value) {
+	public WrapperPlayServerTitle setFadeIn(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -107,8 +110,9 @@ public class WrapperPlayServerTitle extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setStay(int value) {
+	public WrapperPlayServerTitle setStay(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	/**
@@ -125,7 +129,8 @@ public class WrapperPlayServerTitle extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setFadeOut(int value) {
+	public WrapperPlayServerTitle setFadeOut(int value) {
 		handle.getIntegers().write(2, value);
+		return this;
 	}
 }

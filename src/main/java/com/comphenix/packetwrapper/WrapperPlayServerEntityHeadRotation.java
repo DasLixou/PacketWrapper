@@ -54,8 +54,9 @@ public class WrapperPlayServerEntityHeadRotation extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerEntityHeadRotation setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -94,7 +95,8 @@ public class WrapperPlayServerEntityHeadRotation extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setHeadYaw(byte value) {
+	public WrapperPlayServerEntityHeadRotation setHeadYaw(byte value) {
 		handle.getBytes().write(0, value);
+		return this;
 	}
 }

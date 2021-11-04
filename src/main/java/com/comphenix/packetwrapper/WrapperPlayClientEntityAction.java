@@ -54,8 +54,9 @@ public class WrapperPlayClientEntityAction extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayClientEntityAction setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -94,8 +95,9 @@ public class WrapperPlayClientEntityAction extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setAction(PlayerAction value) {
+	public WrapperPlayClientEntityAction setAction(PlayerAction value) {
 		handle.getPlayerActions().write(0, value);
+		return this;
 	}
 
 	/**
@@ -114,8 +116,9 @@ public class WrapperPlayClientEntityAction extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setJumpBoost(int value) {
+	public WrapperPlayClientEntityAction setJumpBoost(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 }

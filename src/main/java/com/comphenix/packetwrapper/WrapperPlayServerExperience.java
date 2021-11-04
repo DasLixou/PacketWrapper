@@ -49,8 +49,9 @@ public class WrapperPlayServerExperience extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setExperienceBar(float value) {
+	public WrapperPlayServerExperience setExperienceBar(float value) {
 		handle.getFloat().write(0, value);
+		return this;
 	}
 
 	/**
@@ -67,8 +68,9 @@ public class WrapperPlayServerExperience extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setLevel(int value) {
+	public WrapperPlayServerExperience setLevel(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	/**
@@ -85,8 +87,9 @@ public class WrapperPlayServerExperience extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setTotalExperience(int value) {
+	public WrapperPlayServerExperience setTotalExperience(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 }

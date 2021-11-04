@@ -56,8 +56,9 @@ public class WrapperPlayServerSetSlot extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setWindowId(int value) {
+	public WrapperPlayServerSetSlot setWindowId(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -76,8 +77,9 @@ public class WrapperPlayServerSetSlot extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setSlot(int value) {
+	public WrapperPlayServerSetSlot setSlot(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	/**
@@ -94,8 +96,9 @@ public class WrapperPlayServerSetSlot extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setSlotData(ItemStack value) {
+	public WrapperPlayServerSetSlot setSlotData(ItemStack value) {
 		handle.getItemModifier().write(0, value);
+		return this;
 	}
 
 }

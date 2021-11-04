@@ -51,8 +51,9 @@ public class WrapperPlayServerScoreboardScore extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setScoreName(String value) {
+	public WrapperPlayServerScoreboardScore setScoreName(String value) {
 		handle.getStrings().write(0, value);
+		return this;
 	}
 
 	/**
@@ -71,8 +72,9 @@ public class WrapperPlayServerScoreboardScore extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setObjectiveName(String value) {
+	public WrapperPlayServerScoreboardScore setObjectiveName(String value) {
 		handle.getStrings().write(1, value);
+		return this;
 	}
 
 	/**
@@ -92,16 +94,18 @@ public class WrapperPlayServerScoreboardScore extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setValue(int value) {
+	public WrapperPlayServerScoreboardScore setValue(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	public ScoreboardAction getAction() {
 		return handle.getScoreboardActions().read(0);
 	}
 
-	public void setScoreboardAction(ScoreboardAction value) {
+	public WrapperPlayServerScoreboardScore setScoreboardAction(ScoreboardAction value) {
 		handle.getScoreboardActions().write(0, value);
+		return this;
 	}
 
 }

@@ -50,8 +50,9 @@ public class WrapperPlayClientUpdateSign extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setLocation(BlockPosition value) {
+	public WrapperPlayClientUpdateSign setLocation(BlockPosition value) {
 		handle.getBlockPositionModifier().write(0, value);
+		return this;
 	}
 
 	/**
@@ -68,12 +69,13 @@ public class WrapperPlayClientUpdateSign extends AbstractPacket {
 	 * 
 	 * @param value - Lines, must be 4 elements long
 	 */
-	public void setLines(String[] value) {
+	public WrapperPlayClientUpdateSign setLines(String[] value) {
 		if (value == null)
 			throw new IllegalArgumentException("value cannot be null!");
 		if (value.length != 4)
 			throw new IllegalArgumentException("value must have 4 elements!");
 
 		handle.getStringArrays().write(0, value);
+		return this;
 	}
 }

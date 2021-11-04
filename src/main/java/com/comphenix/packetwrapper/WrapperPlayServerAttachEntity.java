@@ -53,8 +53,9 @@ public class WrapperPlayServerAttachEntity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerAttachEntity setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -93,7 +94,8 @@ public class WrapperPlayServerAttachEntity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setVehicleId(int value) {
+	public WrapperPlayServerAttachEntity setVehicleId(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 }

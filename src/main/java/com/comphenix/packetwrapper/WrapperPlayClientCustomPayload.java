@@ -46,8 +46,9 @@ public class WrapperPlayClientCustomPayload extends AbstractPacket {
 	 * Starting in 1.13, channel names need to be lower case, in the new identifier format,
 	 * i.e. {@code minecraft:brand}. The previously standard {@code |} is no longer allowed.
 	 */
-	public void setChannel(MinecraftKey value) {
+	public WrapperPlayClientCustomPayload setChannel(MinecraftKey value) {
 		handle.getMinecraftKeys().writeSafely(0, value);
+		return this;
 	}
 
 	/**
@@ -76,13 +77,14 @@ public class WrapperPlayClientCustomPayload extends AbstractPacket {
 	 * 
 	 * @param contents - new payload contents
 	 */
-	public void setContentsBuffer(ByteBuf contents) {
+	public WrapperPlayClientCustomPayload setContentsBuffer(ByteBuf contents) {
 		if (MinecraftReflection.is(MinecraftReflection.getPacketDataSerializerClass(), contents)) {
 			handle.getModifier().withType(ByteBuf.class).write(0, contents);
 		} else {
 			Object serializer = MinecraftReflection.getPacketDataSerializer(contents);
 			handle.getModifier().withType(ByteBuf.class).write(0, serializer);
 		}
+		return this;
 	}
 
 	/**
@@ -90,7 +92,8 @@ public class WrapperPlayClientCustomPayload extends AbstractPacket {
 	 * 
 	 * @param content - new payload content
 	 */
-	public void setContents(byte[] content) {
+	public WrapperPlayClientCustomPayload setContents(byte[] content) {
 		setContentsBuffer(Unpooled.copiedBuffer(content));
+		return this;
 	}
 }

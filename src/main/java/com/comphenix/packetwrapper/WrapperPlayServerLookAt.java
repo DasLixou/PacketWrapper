@@ -54,9 +54,10 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
 	 * Set Feet/eyes.
 	 * @param value - new value.
 	 */
-	public void setAnchor(Anchor value) {
+	public WrapperPlayServerLookAt setAnchor(Anchor value) {
 		handle.getEnumModifier(Anchor.class, MinecraftReflection.getMinecraftClass("ArgumentAnchor$Anchor"))
 		      .writeSafely(0, value);
+		return this;
 	}
 
 	/**
@@ -73,8 +74,9 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
 	 * Set Target x.
 	 * @param value - new value.
 	 */
-	public void setTargetX(double value) {
+	public WrapperPlayServerLookAt setTargetX(double value) {
 		handle.getDoubles().write(0, value);
+		return this;
 	}
 
 	/**
@@ -91,8 +93,9 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
 	 * Set Target y.
 	 * @param value - new value.
 	 */
-	public void setTargetY(double value) {
+	public WrapperPlayServerLookAt setTargetY(double value) {
 		handle.getDoubles().write(1, value);
+		return this;
 	}
 
 	/**
@@ -109,8 +112,9 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
 	 * Set Target z.
 	 * @param value - new value.
 	 */
-	public void setTargetZ(double value) {
+	public WrapperPlayServerLookAt setTargetZ(double value) {
 		handle.getDoubles().write(2, value);
+		return this;
 	}
 
 	/**
@@ -127,8 +131,9 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
 	 * Set Is entity.
 	 * @param value - new value.
 	 */
-	public void setIsEntity(boolean value) {
+	public WrapperPlayServerLookAt setIsEntity(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 
 	/**
@@ -145,8 +150,9 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
 	 * Set Entity ID.
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerLookAt setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -182,9 +188,10 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
 	 * Set Entity feet/eyes.
 	 * @param value - new value.
 	 */
-	public void setEntityAnchor(Anchor value) {
+	public WrapperPlayServerLookAt setEntityAnchor(Anchor value) {
 		handle.getEnumModifier(Anchor.class, MinecraftReflection.getMinecraftClass("ArgumentAnchor$Anchor"))
 		      .writeSafely(1, value);
+		return this;
 	}
 
 	public enum Anchor {

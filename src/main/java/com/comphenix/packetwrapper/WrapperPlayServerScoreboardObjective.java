@@ -69,8 +69,9 @@ public class WrapperPlayServerScoreboardObjective extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setName(String value) {
+	public WrapperPlayServerScoreboardObjective setName(String value) {
 		handle.getStrings().write(0, value);
+		return this;
 	}
 
 	/**
@@ -89,8 +90,9 @@ public class WrapperPlayServerScoreboardObjective extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setDisplayName(WrappedChatComponent value) {
+	public WrapperPlayServerScoreboardObjective setDisplayName(WrappedChatComponent value) {
 		handle.getChatComponents().write(0, value);
+		return this;
 	}
 
 	/**
@@ -110,8 +112,9 @@ public class WrapperPlayServerScoreboardObjective extends AbstractPacket {
 	 * @param value - value
 	 * @see #getHealthDisplay()
 	 */
-	public void setHealthDisplay(HealthDisplay value) {
+	public WrapperPlayServerScoreboardObjective setHealthDisplay(HealthDisplay value) {
 		handle.getEnumModifier(HealthDisplay.class, 2).write(0, value);
+		return this;
 	}
 
 	/**
@@ -131,8 +134,9 @@ public class WrapperPlayServerScoreboardObjective extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setMode(int value) {
+	public WrapperPlayServerScoreboardObjective setMode(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	public enum HealthDisplay {

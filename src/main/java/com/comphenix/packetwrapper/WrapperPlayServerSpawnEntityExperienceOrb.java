@@ -54,8 +54,9 @@ public class WrapperPlayServerSpawnEntityExperienceOrb extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerSpawnEntityExperienceOrb setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -94,8 +95,9 @@ public class WrapperPlayServerSpawnEntityExperienceOrb extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setX(double value) {
+	public WrapperPlayServerSpawnEntityExperienceOrb setX(double value) {
 		handle.getDoubles().write(0, value);
+		return this;
 	}
 
 	/**
@@ -114,8 +116,9 @@ public class WrapperPlayServerSpawnEntityExperienceOrb extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setY(double value) {
+	public WrapperPlayServerSpawnEntityExperienceOrb setY(double value) {
 		handle.getDoubles().write(1, value);
+		return this;
 	}
 
 	/**
@@ -134,8 +137,9 @@ public class WrapperPlayServerSpawnEntityExperienceOrb extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setZ(double value) {
+	public WrapperPlayServerSpawnEntityExperienceOrb setZ(double value) {
 		handle.getDoubles().write(2, value);
+		return this;
 	}
 
 	/**
@@ -154,7 +158,8 @@ public class WrapperPlayServerSpawnEntityExperienceOrb extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setCount(int value) {
+	public WrapperPlayServerSpawnEntityExperienceOrb setCount(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 }

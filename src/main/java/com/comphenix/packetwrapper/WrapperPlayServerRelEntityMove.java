@@ -54,8 +54,9 @@ public class WrapperPlayServerRelEntityMove extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerRelEntityMove setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -92,8 +93,9 @@ public class WrapperPlayServerRelEntityMove extends AbstractPacket {
 	 *
 	 * @param value - new value.
 	 */
-	public void setDx(double value) {
+	public WrapperPlayServerRelEntityMove setDx(double value) {
 		handle.getShorts().write(0, (short) (value * 4096));
+		return this;
 	}
 
 	/**
@@ -110,8 +112,9 @@ public class WrapperPlayServerRelEntityMove extends AbstractPacket {
 	 *
 	 * @param value - new value.
 	 */
-	public void setDy(double value) {
+	public WrapperPlayServerRelEntityMove setDy(double value) {
 		handle.getShorts().write(1, (short) (value * 4096));
+		return this;
 	}
 
 	/**
@@ -128,8 +131,9 @@ public class WrapperPlayServerRelEntityMove extends AbstractPacket {
 	 *
 	 * @param value - new value.
 	 */
-	public void setDz(double value) {
+	public WrapperPlayServerRelEntityMove setDz(double value) {
 		handle.getShorts().write(2, (short) (value * 4096));
+		return this;
 	}
 
 	/**
@@ -146,8 +150,9 @@ public class WrapperPlayServerRelEntityMove extends AbstractPacket {
 	 *
 	 * @param value - new yaw.
 	 */
-	public void setYaw(float value) {
+	public WrapperPlayServerRelEntityMove setYaw(float value) {
 		handle.getBytes().write(0, (byte) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	/**
@@ -164,8 +169,9 @@ public class WrapperPlayServerRelEntityMove extends AbstractPacket {
 	 *
 	 * @param value - new pitch.
 	 */
-	public void setPitch(float value) {
+	public WrapperPlayServerRelEntityMove setPitch(float value) {
 		handle.getBytes().write(1, (byte) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	/**
@@ -182,7 +188,8 @@ public class WrapperPlayServerRelEntityMove extends AbstractPacket {
 	 *
 	 * @param value - new value.
 	 */
-	public void setOnGround(boolean value) {
+	public WrapperPlayServerRelEntityMove setOnGround(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 }

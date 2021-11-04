@@ -51,8 +51,9 @@ public class WrapperPlayClientTeleportAccept extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setTeleportId(int value) {
+	public WrapperPlayClientTeleportAccept setTeleportId(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 }

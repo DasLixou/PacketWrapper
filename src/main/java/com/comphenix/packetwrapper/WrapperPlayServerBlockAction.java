@@ -52,8 +52,9 @@ public class WrapperPlayServerBlockAction extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setLocation(BlockPosition value) {
+	public WrapperPlayServerBlockAction setLocation(BlockPosition value) {
 		handle.getBlockPositionModifier().write(0, value);
+		return this;
 	}
 
 	/**
@@ -72,8 +73,9 @@ public class WrapperPlayServerBlockAction extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setByte1(int value) {
+	public WrapperPlayServerBlockAction setByte1(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -92,8 +94,9 @@ public class WrapperPlayServerBlockAction extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setByte2(int value) {
+	public WrapperPlayServerBlockAction setByte2(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	/**
@@ -112,8 +115,9 @@ public class WrapperPlayServerBlockAction extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setBlockType(Material value) {
+	public WrapperPlayServerBlockAction setBlockType(Material value) {
 		handle.getBlocks().write(0, value);
+		return this;
 	}
 
 }

@@ -37,8 +37,9 @@ public class WrapperPlayServerAbilities extends AbstractPacket {
 		return handle.getBooleans().read(0);
 	}
 
-	public void setInvulnerable(boolean value) {
+	public WrapperPlayServerAbilities setInvulnerable(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 
 	/**Misspelled.
@@ -53,47 +54,53 @@ public class WrapperPlayServerAbilities extends AbstractPacket {
 	 * @see #setInvulnerable(boolean)
 	 */
 	@Deprecated
-	public void setInvulnurable(boolean value) {
+	public WrapperPlayServerAbilities setInvulnurable(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 
 	public boolean isFlying() {
 		return handle.getBooleans().read(1);
 	}
 
-	public void setFlying(boolean value) {
+	public WrapperPlayServerAbilities setFlying(boolean value) {
 		handle.getBooleans().write(1, value);
+		return this;
 	}
 
 	public boolean canFly() {
 		return handle.getBooleans().read(2);
 	}
 
-	public void setCanFly(boolean value) {
+	public WrapperPlayServerAbilities setCanFly(boolean value) {
 		handle.getBooleans().write(2, value);
+		return this;
 	}
 
 	public boolean canInstantlyBuild() {
 		return handle.getBooleans().read(3);
 	}
 
-	public void setCanInstantlyBuild(boolean value) {
+	public WrapperPlayServerAbilities setCanInstantlyBuild(boolean value) {
 		handle.getBooleans().write(3, value);
+		return this;
 	}
 
 	public float getFlyingSpeed() {
 		return handle.getFloat().read(0);
 	}
 
-	public void setFlyingSpeed(float value) {
+	public WrapperPlayServerAbilities setFlyingSpeed(float value) {
 		handle.getFloat().write(0, value);
+		return this;
 	}
 
 	public float getWalkingSpeed() {
 		return handle.getFloat().read(1);
 	}
 
-	public void setWalkingSpeed(float value) {
+	public WrapperPlayServerAbilities setWalkingSpeed(float value) {
 		handle.getFloat().write(1, value);
+		return this;
 	}
 }

@@ -48,8 +48,9 @@ public class WrapperLoginServerCustomPayload extends AbstractPacket {
      * Set Message ID.
      * @param value - new value.
      */
-    public void setMessageId(int value) {
+    public WrapperLoginServerCustomPayload setMessageId(int value) {
         handle.getIntegers().write(0, value);
+        return this;
     }
     
     // Cannot find type for b

@@ -49,8 +49,9 @@ public class WrapperPlayClientFlying extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setOnGround(boolean value) {
+	public WrapperPlayClientFlying setOnGround(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 
 }

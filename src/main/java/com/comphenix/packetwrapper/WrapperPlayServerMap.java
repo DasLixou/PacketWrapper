@@ -54,8 +54,9 @@ public class WrapperPlayServerMap extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setItemDamage(int value) {
+	public WrapperPlayServerMap setItemDamage(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -114,24 +115,27 @@ public class WrapperPlayServerMap extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setScale(byte value) {
+	public WrapperPlayServerMap setScale(byte value) {
 		handle.getBytes().write(0, value);
+		return this;
 	}
 
 	public boolean getTrackingPosition() {
 		return handle.getBooleans().read(0);
 	}
 
-	public void setTrackingPosition(boolean value) {
+	public WrapperPlayServerMap setTrackingPosition(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 
 	public boolean isLocked() {
 		return handle.getBooleans().read(1);
 	}
 
-	public void setLocked(boolean value) {
+	public WrapperPlayServerMap setLocked(boolean value) {
 		handle.getBooleans().write(1, value);
+		return this;
 	}
 
 	public MapIcon[] getMapIcons() {
@@ -145,7 +149,7 @@ public class WrapperPlayServerMap extends AbstractPacket {
 		return wrappers;
 	}
 
-	public void setMapIcons(MapIcon[] value) {
+	public WrapperPlayServerMap setMapIcons(MapIcon[] value) {
 		Object[] iconHandles = new Object[value.length];
 
 		for (int i = 0; i < value.length; i++) {
@@ -153,45 +157,51 @@ public class WrapperPlayServerMap extends AbstractPacket {
 		}
 
 		handle.getModifier().write(4, iconHandles);
+		return this;
 	}
 
 	public int getColumns() {
 		return handle.getIntegers().read(1);
 	}
 
-	public void setColumns(int value) {
+	public WrapperPlayServerMap setColumns(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	public int getRows() {
 		return handle.getIntegers().read(2);
 	}
 
-	public void setRows(int value) {
+	public WrapperPlayServerMap setRows(int value) {
 		handle.getIntegers().write(2, value);
+		return this;
 	}
 
 	public int getX() {
 		return handle.getIntegers().read(3);
 	}
 
-	public void setX(int value) {
+	public WrapperPlayServerMap setX(int value) {
 		handle.getIntegers().write(3, value);
+		return this;
 	}
 
 	public int getZ() {
 		return handle.getIntegers().read(4);
 	}
 
-	public void setZ(int value) {
+	public WrapperPlayServerMap setZ(int value) {
 		handle.getIntegers().write(4, value);
+		return this;
 	}
 
 	public byte[] getData() {
 		return handle.getByteArrays().read(0);
 	}
 
-	public void setData(byte[] value) {
+	public WrapperPlayServerMap setData(byte[] value) {
 		handle.getByteArrays().write(0, value);
+		return this;
 	}
 }

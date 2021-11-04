@@ -77,8 +77,9 @@ public class WrapperPlayServerScoreboardTeam extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setName(String value) {
+	public WrapperPlayServerScoreboardTeam setName(String value) {
 		handle.getStrings().write(0, value);
+		return this;
 	}
 
 	/**
@@ -97,8 +98,9 @@ public class WrapperPlayServerScoreboardTeam extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setDisplayName(WrappedChatComponent value) {
+	public WrapperPlayServerScoreboardTeam setDisplayName(WrappedChatComponent value) {
 		handle.getChatComponents().write(0, value);
+		return this;
 	}
 
 	/**
@@ -118,8 +120,9 @@ public class WrapperPlayServerScoreboardTeam extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setPrefix(WrappedChatComponent value) {
+	public WrapperPlayServerScoreboardTeam setPrefix(WrappedChatComponent value) {
 		handle.getChatComponents().write(1, value);
+		return this;
 	}
 
 	/**
@@ -139,8 +142,9 @@ public class WrapperPlayServerScoreboardTeam extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setSuffix(WrappedChatComponent value) {
+	public WrapperPlayServerScoreboardTeam setSuffix(WrappedChatComponent value) {
 		handle.getChatComponents().write(2, value);
+		return this;
 	}
 
 	/**
@@ -160,8 +164,9 @@ public class WrapperPlayServerScoreboardTeam extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setNameTagVisibility(String value) {
+	public WrapperPlayServerScoreboardTeam setNameTagVisibility(String value) {
 		handle.getStrings().write(1, value);
+		return this;
 	}
 
 	/**
@@ -180,8 +185,9 @@ public class WrapperPlayServerScoreboardTeam extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setColor(ChatColor value) {
+	public WrapperPlayServerScoreboardTeam setColor(ChatColor value) {
 		handle.getEnumModifier(ChatColor.class, MinecraftReflection.getMinecraftClass("EnumChatFormat")).write(0, value);
+		return this;
 	}
 
 	/**
@@ -197,8 +203,9 @@ public class WrapperPlayServerScoreboardTeam extends AbstractPacket {
 	 * Sets the collision rule.
 	 * @param value - new value.
 	 */
-	public void setCollisionRule(String value) {
+	public WrapperPlayServerScoreboardTeam setCollisionRule(String value) {
 		handle.getStrings().write(2, value);
+		return this;
 	}
 
 	/**
@@ -220,8 +227,9 @@ public class WrapperPlayServerScoreboardTeam extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setPlayers(List<String> value) {
+	public WrapperPlayServerScoreboardTeam setPlayers(List<String> value) {
 		handle.getSpecificModifier(Collection.class).write(0, value);
+		return this;
 	}
 
 	/**
@@ -230,7 +238,7 @@ public class WrapperPlayServerScoreboardTeam extends AbstractPacket {
 	 * Notes: if 0 then the team is created. If 1 then the team is removed. If 2
 	 * the team team information is updated. If 3 then new players are added to
 	 * the team. If 4 then players are removed from the team.
-	 * 
+	 *
 	 * @return The current Mode
 	 */
 	public int getMode() {
@@ -242,8 +250,9 @@ public class WrapperPlayServerScoreboardTeam extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setMode(int value) {
+	public WrapperPlayServerScoreboardTeam setMode(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -273,7 +282,8 @@ public class WrapperPlayServerScoreboardTeam extends AbstractPacket {
 	 * @param value - new value
 	 * @see #getPackOptionData()
 	 */
-	public void setPackOptionData(int value) {
+	public WrapperPlayServerScoreboardTeam setPackOptionData(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 }

@@ -50,8 +50,9 @@ public class WrapperPlayServerExplosion extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setX(double value) {
+	public WrapperPlayServerExplosion setX(double value) {
 		handle.getDoubles().write(0, value);
+		return this;
 	}
 
 	/**
@@ -68,8 +69,9 @@ public class WrapperPlayServerExplosion extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setY(double value) {
+	public WrapperPlayServerExplosion setY(double value) {
 		handle.getDoubles().write(1, value);
+		return this;
 	}
 
 	/**
@@ -86,8 +88,9 @@ public class WrapperPlayServerExplosion extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setZ(double value) {
+	public WrapperPlayServerExplosion setZ(double value) {
 		handle.getDoubles().write(2, value);
+		return this;
 	}
 
 	/**
@@ -106,8 +109,9 @@ public class WrapperPlayServerExplosion extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setRadius(float value) {
+	public WrapperPlayServerExplosion setRadius(float value) {
 		handle.getFloat().write(0, value);
+		return this;
 	}
 
 	/**
@@ -140,32 +144,36 @@ public class WrapperPlayServerExplosion extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setRecords(List<BlockPosition> value) {
+	public WrapperPlayServerExplosion setRecords(List<BlockPosition> value) {
 		handle.getBlockPositionCollectionModifier().write(0, value);
+		return this;
 	}
 
 	public float getPlayerVelocityX() {
 		return handle.getFloat().read(1);
 	}
 
-	public void setPlayerVelocityX(float value) {
+	public WrapperPlayServerExplosion setPlayerVelocityX(float value) {
 		handle.getFloat().write(1, value);
+		return this;
 	}
 
 	public float getPlayerVelocityY() {
 		return handle.getFloat().read(2);
 	}
 
-	public void setPlayerVelocityY(float value) {
+	public WrapperPlayServerExplosion setPlayerVelocityY(float value) {
 		handle.getFloat().write(2, value);
+		return this;
 	}
 
 	public float getPlayerVelocityZ() {
 		return handle.getFloat().read(3);
 	}
 
-	public void setPlayerVelocityZ(float value) {
+	public WrapperPlayServerExplosion setPlayerVelocityZ(float value) {
 		handle.getFloat().write(3, value);
+		return this;
 	}
 
 }

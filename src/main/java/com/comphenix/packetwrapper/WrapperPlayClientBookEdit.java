@@ -48,8 +48,9 @@ public class WrapperPlayClientBookEdit extends AbstractPacket {
      * Set New book.
      * @param value - new value.
      */
-    public void setNewBook(ItemStack value) {
+    public WrapperPlayClientBookEdit setNewBook(ItemStack value) {
         handle.getItemModifier().write(0, value);
+        return this;
     }
     
     /**
@@ -66,7 +67,8 @@ public class WrapperPlayClientBookEdit extends AbstractPacket {
      * Set Is signing.
      * @param value - new value.
      */
-    public void setIsSigning(boolean value) {
+    public WrapperPlayClientBookEdit setIsSigning(boolean value) {
         handle.getBooleans().write(0, value);
+        return this;
     }
 }

@@ -40,15 +40,17 @@ public class WrapperPlayServerStopSound extends AbstractPacket {
         return handle.getMinecraftKeys().readSafely(0);
     }
 
-    public void setSoundEffect(MinecraftKey value) {
+    public WrapperPlayServerStopSound setSoundEffect(MinecraftKey value) {
         handle.getMinecraftKeys().writeSafely(0, value);
+        return this;
     }
 
     public EnumWrappers.SoundCategory getCategory() {
     	return handle.getSoundCategories().readSafely(0);
     }
 
-    public void setCategory(EnumWrappers.SoundCategory value) {
+    public WrapperPlayServerStopSound setCategory(EnumWrappers.SoundCategory value) {
     	handle.getSoundCategories().writeSafely(0, value);
+        return this;
     }
 }

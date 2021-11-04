@@ -53,8 +53,9 @@ public class WrapperPlayServerEntityEffect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerEntityEffect setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -93,8 +94,9 @@ public class WrapperPlayServerEntityEffect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEffectID(byte value) {
+	public WrapperPlayServerEntityEffect setEffectID(byte value) {
 		handle.getBytes().write(0, (byte) (value & 255));
+		return this;
 	}
 
 	/**
@@ -111,8 +113,9 @@ public class WrapperPlayServerEntityEffect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setAmplifier(byte value) {
+	public WrapperPlayServerEntityEffect setAmplifier(byte value) {
 		handle.getBytes().write(1, (byte) (value & 255));
+		return this;
 	}
 
 	/**
@@ -129,8 +132,9 @@ public class WrapperPlayServerEntityEffect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setDuration(int value) {
+	public WrapperPlayServerEntityEffect setDuration(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	/**
@@ -147,8 +151,9 @@ public class WrapperPlayServerEntityEffect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setHideParticles(boolean value) {
+	public WrapperPlayServerEntityEffect setHideParticles(boolean value) {
 		handle.getBytes().write(2, (byte) (value ? 0 : 1));
+		return this;
 	}
 
 }

@@ -49,8 +49,9 @@ public class WrapperPlayServerOpenBook extends AbstractPacket {
      * Set Hand.
      * @param value - new value.
      */
-    public void setHand(Hand value) {
+    public WrapperPlayServerOpenBook setHand(Hand value) {
         handle.getHands().write(0, value);
+        return this;
     }
     
 }

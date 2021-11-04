@@ -37,8 +37,9 @@ public class WrapperPlayClientRecipeDisplayed extends AbstractPacket {
         return handle.getEnumModifier(Status.class, 0).readSafely(0);
     }
 
-    public void setStatus(Status value) {
+    public WrapperPlayClientRecipeDisplayed setStatus(Status value) {
         handle.getEnumModifier(Status.class, 0).writeSafely(0, value);
+        return this;
     }
 
     // Modifier for recipe can be created upon request
@@ -47,16 +48,18 @@ public class WrapperPlayClientRecipeDisplayed extends AbstractPacket {
         return handle.getBooleans().read(0);
     }
 
-    public void setBookOpen(boolean value) {
+    public WrapperPlayClientRecipeDisplayed setBookOpen(boolean value) {
         handle.getBooleans().write(0, value);
+        return this;
     }
 
     public boolean isFilterActive() {
         return handle.getBooleans().read(1);
     }
 
-    public void setFilterActive(boolean value) {
+    public WrapperPlayClientRecipeDisplayed setFilterActive(boolean value) {
         handle.getBooleans().write(1, value);
+        return this;
     }
 
     public enum Status {

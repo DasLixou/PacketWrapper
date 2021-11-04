@@ -54,8 +54,9 @@ public class WrapperPlayServerRelEntityMoveLook extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerRelEntityMoveLook setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -92,8 +93,9 @@ public class WrapperPlayServerRelEntityMoveLook extends AbstractPacket {
 	 *
 	 * @param value - new value.
 	 */
-	public void setDx(double value) {
+	public WrapperPlayServerRelEntityMoveLook setDx(double value) {
 		handle.getShorts().write(0, (short) (value * 4096));
+		return this;
 	}
 
 	/**
@@ -110,8 +112,9 @@ public class WrapperPlayServerRelEntityMoveLook extends AbstractPacket {
 	 *
 	 * @param value - new value.
 	 */
-	public void setDy(double value) {
+	public WrapperPlayServerRelEntityMoveLook setDy(double value) {
 		handle.getShorts().write(1, (short) (value * 4096));
+		return this;
 	}
 
 	/**
@@ -128,8 +131,9 @@ public class WrapperPlayServerRelEntityMoveLook extends AbstractPacket {
 	 *
 	 * @param value - new value.
 	 */
-	public void setDz(double value) {
+	public WrapperPlayServerRelEntityMoveLook setDz(double value) {
 		handle.getShorts().write(2, (short) (value * 4096));
+		return this;
 	}
 
 	/**
@@ -146,8 +150,9 @@ public class WrapperPlayServerRelEntityMoveLook extends AbstractPacket {
 	 * 
 	 * @param value - new yaw.
 	 */
-	public void setYaw(float value) {
+	public WrapperPlayServerRelEntityMoveLook setYaw(float value) {
 		handle.getBytes().write(0, (byte) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	/**
@@ -164,8 +169,9 @@ public class WrapperPlayServerRelEntityMoveLook extends AbstractPacket {
 	 * 
 	 * @param value - new pitch.
 	 */
-	public void setPitch(float value) {
+	public WrapperPlayServerRelEntityMoveLook setPitch(float value) {
 		handle.getBytes().write(1, (byte) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	/**
@@ -182,7 +188,8 @@ public class WrapperPlayServerRelEntityMoveLook extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setOnGround(boolean value) {
+	public WrapperPlayServerRelEntityMoveLook setOnGround(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 }

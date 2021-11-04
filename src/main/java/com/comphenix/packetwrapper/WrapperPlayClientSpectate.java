@@ -49,8 +49,9 @@ public class WrapperPlayClientSpectate extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setTargetPlayer(UUID value) {
+	public WrapperPlayClientSpectate setTargetPlayer(UUID value) {
 		handle.getUUIDs().write(0, value);
+		return this;
 	}
 
 }

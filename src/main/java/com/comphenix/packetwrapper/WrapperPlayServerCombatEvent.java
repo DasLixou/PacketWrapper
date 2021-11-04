@@ -52,8 +52,9 @@ public class WrapperPlayServerCombatEvent extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEvent(CombatEventType value) {
+	public WrapperPlayServerCombatEvent setEvent(CombatEventType value) {
 		handle.getCombatEvents().write(0, value);
+		return this;
 	}
 
 	// ---- END_COMBAT
@@ -66,12 +67,13 @@ public class WrapperPlayServerCombatEvent extends AbstractPacket {
 		return handle.getIntegers().read(0);
 	}
 
-	public void setDuration(int value) {
+	public WrapperPlayServerCombatEvent setDuration(int value) {
 		if (getEvent() != CombatEventType.END_COMBAT)
 			throw new IllegalStateException(
 					"Duration only exists for END_COMBAT");
 
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	// ---- ENTITY_DIED
@@ -84,12 +86,13 @@ public class WrapperPlayServerCombatEvent extends AbstractPacket {
 		return handle.getIntegers().read(0);
 	}
 
-	public void setPlayerId(int value) {
+	public WrapperPlayServerCombatEvent setPlayerId(int value) {
 		if (getEvent() != CombatEventType.ENTITY_DIED)
 			throw new IllegalStateException(
 					"Player ID only exists for ENTITY_DEAD");
 
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	public int getEntityID() {
@@ -105,7 +108,7 @@ public class WrapperPlayServerCombatEvent extends AbstractPacket {
 		}
 	}
 
-	public void setEntityId(int value) {
+	public WrapperPlayServerCombatEvent setEntityId(int value) {
 		CombatEventType event = getEvent();
 		switch (event) {
 			case END_COMBAT:
@@ -126,11 +129,12 @@ public class WrapperPlayServerCombatEvent extends AbstractPacket {
 		return handle.getStrings().read(0);
 	}
 
-	public void setMessage(String value) {
+	public WrapperPlayServerCombatEvent setMessage(String value) {
 		if (getEvent() != CombatEventType.ENTITY_DIED)
 			throw new IllegalStateException(
 					"Message only exists for ENTITY_DEAD");
 
 		handle.getStrings().write(0, value);
+		return this;
 	}
 }

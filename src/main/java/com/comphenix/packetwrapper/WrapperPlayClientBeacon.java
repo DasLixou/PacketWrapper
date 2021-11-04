@@ -48,8 +48,9 @@ public class WrapperPlayClientBeacon extends AbstractPacket {
      * Set Primary Effect.
      * @param value - new value.
      */
-    public void setPrimaryEffect(int value) {
+    public WrapperPlayClientBeacon setPrimaryEffect(int value) {
         handle.getIntegers().write(0, value);
+        return this;
     }
     
     /**
@@ -66,8 +67,9 @@ public class WrapperPlayClientBeacon extends AbstractPacket {
      * Set Secondary Effect.
      * @param value - new value.
      */
-    public void setSecondaryEffect(int value) {
+    public WrapperPlayClientBeacon setSecondaryEffect(int value) {
         handle.getIntegers().write(1, value);
+        return this;
     }
     
 }

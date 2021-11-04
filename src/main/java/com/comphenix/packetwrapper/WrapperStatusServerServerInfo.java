@@ -50,8 +50,9 @@ public class WrapperStatusServerServerInfo extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setJsonResponse(WrappedServerPing value) {
+	public WrapperStatusServerServerInfo setJsonResponse(WrappedServerPing value) {
 		handle.getServerPings().write(0, value);
+		return this;
 	}
 
 }

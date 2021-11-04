@@ -48,8 +48,9 @@ public class WrapperPlayClientPickItem extends AbstractPacket {
      * Set Slot to use.
      * @param value - new value.
      */
-    public void setSlotToUse(int value) {
+    public WrapperPlayClientPickItem setSlotToUse(int value) {
         handle.getIntegers().write(0, value);
+        return this;
     }
     
 }

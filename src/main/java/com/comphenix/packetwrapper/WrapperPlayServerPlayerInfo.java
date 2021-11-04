@@ -41,15 +41,17 @@ public class WrapperPlayServerPlayerInfo extends AbstractPacket {
 		return handle.getPlayerInfoAction().read(0);
 	}
 
-	public void setAction(PlayerInfoAction value) {
+	public WrapperPlayServerPlayerInfo setAction(PlayerInfoAction value) {
 		handle.getPlayerInfoAction().write(0, value);
+		return this;
 	}
 
 	public List<PlayerInfoData> getData() {
 		return handle.getPlayerInfoDataLists().read(0);
 	}
 
-	public void setData(List<PlayerInfoData> value) {
+	public WrapperPlayServerPlayerInfo setData(List<PlayerInfoData> value) {
 		handle.getPlayerInfoDataLists().write(0, value);
+		return this;
 	}
 }

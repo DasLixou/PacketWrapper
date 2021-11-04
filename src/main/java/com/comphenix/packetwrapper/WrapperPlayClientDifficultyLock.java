@@ -46,8 +46,9 @@ public class WrapperPlayClientDifficultyLock extends AbstractPacket {
      * Set Locked.
      * @param value - new value.
      */
-    public void setLocked(boolean value) {
+    public WrapperPlayClientDifficultyLock setLocked(boolean value) {
         handle.getBooleans().write(0, value);
+        return this;
     }
     
 }

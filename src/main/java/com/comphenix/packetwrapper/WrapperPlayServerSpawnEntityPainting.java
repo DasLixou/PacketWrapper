@@ -56,8 +56,9 @@ public class WrapperPlayServerSpawnEntityPainting extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerSpawnEntityPainting setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -96,23 +97,26 @@ public class WrapperPlayServerSpawnEntityPainting extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setLocation(BlockPosition value) {
+	public WrapperPlayServerSpawnEntityPainting setLocation(BlockPosition value) {
 		handle.getBlockPositionModifier().write(0, value);
+		return this;
 	}
 
 	public Direction getDirection() {
 		return handle.getDirections().read(0);
 	}
 
-	public void setDirection(Direction value) {
+	public WrapperPlayServerSpawnEntityPainting setDirection(Direction value) {
 		handle.getDirections().write(0, value);
+		return this;
 	}
 
 	public int getPaintingId() {
 		return handle.getIntegers().read(0);
 	}
 
-	public void setPaintingId(int value) {
+	public WrapperPlayServerSpawnEntityPainting setPaintingId(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 }

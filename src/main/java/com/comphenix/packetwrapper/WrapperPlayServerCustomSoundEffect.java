@@ -53,8 +53,9 @@ public class WrapperPlayServerCustomSoundEffect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setSoundName(MinecraftKey value) {
+	public WrapperPlayServerCustomSoundEffect setSoundName(MinecraftKey value) {
 		handle.getMinecraftKeys().write(0, value);
+		return this;
 	}
 
 	/**
@@ -74,8 +75,9 @@ public class WrapperPlayServerCustomSoundEffect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setSoundCategory(SoundCategory value) {
+	public WrapperPlayServerCustomSoundEffect setSoundCategory(SoundCategory value) {
 		handle.getSoundCategories().write(0, value);
+		return this;
 	}
 
 	/**
@@ -95,8 +97,9 @@ public class WrapperPlayServerCustomSoundEffect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setX(int value) {
+	public WrapperPlayServerCustomSoundEffect setX(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -116,8 +119,9 @@ public class WrapperPlayServerCustomSoundEffect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setY(int value) {
+	public WrapperPlayServerCustomSoundEffect setY(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	/**
@@ -137,8 +141,9 @@ public class WrapperPlayServerCustomSoundEffect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setZ(int value) {
+	public WrapperPlayServerCustomSoundEffect setZ(int value) {
 		handle.getIntegers().write(2, value);
+		return this;
 	}
 
 	/**
@@ -157,8 +162,9 @@ public class WrapperPlayServerCustomSoundEffect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setVolume(float value) {
+	public WrapperPlayServerCustomSoundEffect setVolume(float value) {
 		handle.getFloat().write(0, value);
+		return this;
 	}
 
 	/**
@@ -177,7 +183,8 @@ public class WrapperPlayServerCustomSoundEffect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setPitch(float value) {
+	public WrapperPlayServerCustomSoundEffect setPitch(float value) {
 		handle.getFloat().write(1, value);
+		return this;
 	}
 }

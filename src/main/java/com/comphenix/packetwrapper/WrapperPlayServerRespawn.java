@@ -54,8 +54,9 @@ public class WrapperPlayServerRespawn extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setDimension(int value) {
+	public WrapperPlayServerRespawn setDimension(int value) {
 		handle.getDimensions().write(0, value);
+		return this;
 	}
 
 	/**
@@ -76,8 +77,9 @@ public class WrapperPlayServerRespawn extends AbstractPacket {
 	 * @param value - new value.
 	 */
 	@Removed
-	public void setDifficulty(Difficulty value) {
+	public WrapperPlayServerRespawn setDifficulty(Difficulty value) {
 		handle.getDifficulties().write(0, value);
+		return this;
 	}
 
 	/**
@@ -97,8 +99,9 @@ public class WrapperPlayServerRespawn extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setGamemode(NativeGameMode value) {
+	public WrapperPlayServerRespawn setGamemode(NativeGameMode value) {
 		handle.getGameModes().write(0, value);
+		return this;
 	}
 
 	/**
@@ -117,8 +120,9 @@ public class WrapperPlayServerRespawn extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setLevelType(WorldType value) {
+	public WrapperPlayServerRespawn setLevelType(WorldType value) {
 		handle.getWorldTypeModifier().write(0, value);
+		return this;
 	}
 
 }

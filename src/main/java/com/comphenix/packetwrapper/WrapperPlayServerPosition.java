@@ -54,8 +54,9 @@ public class WrapperPlayServerPosition extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setX(double value) {
+	public WrapperPlayServerPosition setX(double value) {
 		handle.getDoubles().write(0, value);
+		return this;
 	}
 
 	/**
@@ -74,8 +75,9 @@ public class WrapperPlayServerPosition extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setY(double value) {
+	public WrapperPlayServerPosition setY(double value) {
 		handle.getDoubles().write(1, value);
+		return this;
 	}
 
 	/**
@@ -94,8 +96,9 @@ public class WrapperPlayServerPosition extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setZ(double value) {
+	public WrapperPlayServerPosition setZ(double value) {
 		handle.getDoubles().write(2, value);
+		return this;
 	}
 
 	/**
@@ -114,8 +117,9 @@ public class WrapperPlayServerPosition extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setYaw(float value) {
+	public WrapperPlayServerPosition setYaw(float value) {
 		handle.getFloat().write(0, value);
+		return this;
 	}
 
 	/**
@@ -134,8 +138,9 @@ public class WrapperPlayServerPosition extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setPitch(float value) {
+	public WrapperPlayServerPosition setPitch(float value) {
 		handle.getFloat().write(1, value);
+		return this;
 	}
 
 	private static final Class<?> FLAGS_CLASS = MinecraftReflection
@@ -155,7 +160,8 @@ public class WrapperPlayServerPosition extends AbstractPacket {
 		return getFlagsModifier().read(0);
 	}
 
-	public void setFlags(Set<PlayerTeleportFlag> value) {
+	public WrapperPlayServerPosition setFlags(Set<PlayerTeleportFlag> value) {
 		getFlagsModifier().write(0, value);
+		return this;
 	}
 }

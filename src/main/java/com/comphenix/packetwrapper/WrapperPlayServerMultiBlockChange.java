@@ -50,8 +50,9 @@ public class WrapperPlayServerMultiBlockChange extends AbstractPacket {
 	 * 
 	 * @param value - new value
 	 */
-	public void setChunk(ChunkCoordIntPair value) {
+	public WrapperPlayServerMultiBlockChange setChunk(ChunkCoordIntPair value) {
 		handle.getChunkCoordIntPairs().write(0, value);
+		return this;
 	}
 
 	/**
@@ -68,7 +69,8 @@ public class WrapperPlayServerMultiBlockChange extends AbstractPacket {
 	 * 
 	 * @param value - new value
 	 */
-	public void setRecords(MultiBlockChangeInfo[] value) {
+	public WrapperPlayServerMultiBlockChange setRecords(MultiBlockChangeInfo[] value) {
 		handle.getMultiBlockChangeInfoArrays().write(0, value);
+		return this;
 	}
 }

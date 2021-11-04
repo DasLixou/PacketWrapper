@@ -60,8 +60,9 @@ public class WrapperPlayClientUseItem extends AbstractPacket {
 	 * @param value - new value.
 	 */
 	@Removed
-	public void setLocation(BlockPosition value) {
+	public WrapperPlayClientUseItem setLocation(BlockPosition value) {
 		handle.getBlockPositionModifier().write(0, value);
+		return this;
 	}
 
 	@Removed
@@ -70,16 +71,18 @@ public class WrapperPlayClientUseItem extends AbstractPacket {
 	}
 
 	@Removed
-	public void setFace(Direction value) {
+	public WrapperPlayClientUseItem setFace(Direction value) {
 		handle.getDirections().write(0, value);
+		return this;
 	}
 
 	public Hand getHand() {
 		return handle.getHands().read(0);
 	}
 
-	public void setHand(Hand value) {
+	public WrapperPlayClientUseItem setHand(Hand value) {
 		handle.getHands().write(0, value);
+		return this;
 	}
 
 	/**
@@ -101,8 +104,9 @@ public class WrapperPlayClientUseItem extends AbstractPacket {
 	 * @param value - new value.
 	 */
 	@Removed
-	public void setCursorPositionX(float value) {
+	public WrapperPlayClientUseItem setCursorPositionX(float value) {
 		handle.getFloat().write(0, value);
+		return this;
 	}
 
 	/**
@@ -124,8 +128,9 @@ public class WrapperPlayClientUseItem extends AbstractPacket {
 	 * @param value - new value.
 	 */
 	@Removed
-	public void setCursorPositionY(float value) {
+	public WrapperPlayClientUseItem setCursorPositionY(float value) {
 		handle.getFloat().write(1, value);
+		return this;
 	}
 
 	/**
@@ -147,8 +152,9 @@ public class WrapperPlayClientUseItem extends AbstractPacket {
 	 * @param value - new value.
 	 */
 	@Removed
-	public void setCursorPositionZ(float value) {
+	public WrapperPlayClientUseItem setCursorPositionZ(float value) {
 		handle.getFloat().write(2, value);
+		return this;
 	}
 
 	public static class MovingObjectPosition {
@@ -167,7 +173,8 @@ public class WrapperPlayClientUseItem extends AbstractPacket {
 		return handle.getModifier().withType(POSITION_CLASS, AUTO_WRAPPER).read(0);
 	}
 
-	public void setPosition(MovingObjectPosition position) {
+	public WrapperPlayClientUseItem setPosition(MovingObjectPosition position) {
 		handle.getModifier().withType(POSITION_CLASS, AUTO_WRAPPER).write(0, position);
+		return this;
 	}
 }

@@ -94,8 +94,9 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 		return handle.getUUIDs().read(0);
 	}
 
-	public void setUniqueId(UUID value) {
+	public WrapperPlayServerSpawnEntityLiving setUniqueId(UUID value) {
 		handle.getUUIDs().write(0, value);
+		return this;
 	}
 
 	/**
@@ -103,8 +104,9 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerSpawnEntityLiving setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -123,8 +125,9 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 	 * @param value - new value.
 	 */
 	@SuppressWarnings("deprecation")
-	public void setType(EntityType value) {
+	public WrapperPlayServerSpawnEntityLiving setType(EntityType value) {
 		handle.getIntegers().write(1, (int) value.getTypeId());
+		return this;
 	}
 
 	/**
@@ -143,8 +146,9 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setX(double value) {
+	public WrapperPlayServerSpawnEntityLiving setX(double value) {
 		handle.getDoubles().write(0, value);
+		return this;
 	}
 
 	/**
@@ -163,8 +167,9 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setY(double value) {
+	public WrapperPlayServerSpawnEntityLiving setY(double value) {
 		handle.getDoubles().write(1, value);
+		return this;
 	}
 
 	/**
@@ -183,8 +188,9 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setZ(double value) {
+	public WrapperPlayServerSpawnEntityLiving setZ(double value) {
 		handle.getDoubles().write(2, value);
+		return this;
 	}
 
 	/**
@@ -201,8 +207,9 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 	 * 
 	 * @param value - new yaw.
 	 */
-	public void setYaw(float value) {
+	public WrapperPlayServerSpawnEntityLiving setYaw(float value) {
 		handle.getBytes().write(0, (byte) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	/**
@@ -219,8 +226,9 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 	 * 
 	 * @param value - new pitch.
 	 */
-	public void setPitch(float value) {
+	public WrapperPlayServerSpawnEntityLiving setPitch(float value) {
 		handle.getBytes().write(1, (byte) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	/**
@@ -237,8 +245,9 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 	 * 
 	 * @param value - new yaw.
 	 */
-	public void setHeadPitch(float value) {
+	public WrapperPlayServerSpawnEntityLiving setHeadPitch(float value) {
 		handle.getBytes().write(2, (byte) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	/**
@@ -255,8 +264,9 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setVelocityX(double value) {
+	public WrapperPlayServerSpawnEntityLiving setVelocityX(double value) {
 		handle.getIntegers().write(2, (int) (value * 8000.0D));
+		return this;
 	}
 
 	/**
@@ -273,8 +283,9 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setVelocityY(double value) {
+	public WrapperPlayServerSpawnEntityLiving setVelocityY(double value) {
 		handle.getIntegers().write(3, (int) (value * 8000.0D));
+		return this;
 	}
 
 	/**
@@ -291,8 +302,9 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setVelocityZ(double value) {
+	public WrapperPlayServerSpawnEntityLiving setVelocityZ(double value) {
 		handle.getIntegers().write(4, (int) (value * 8000.0D));
+		return this;
 	}
 
 	/**
@@ -313,7 +325,8 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 	 * @param value - new value.
 	 */
 	@Removed
-	public void setMetadata(WrappedDataWatcher value) {
+	public WrapperPlayServerSpawnEntityLiving setMetadata(WrappedDataWatcher value) {
 		handle.getDataWatcherModifier().write(0, value);
+		return this;
 	}
 }

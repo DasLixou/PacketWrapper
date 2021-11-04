@@ -49,8 +49,9 @@ public class WrapperPlayServerUpdateHealth extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setHealth(float value) {
+	public WrapperPlayServerUpdateHealth setHealth(float value) {
 		handle.getFloat().write(0, value);
+		return this;
 	}
 
 	/**
@@ -69,8 +70,9 @@ public class WrapperPlayServerUpdateHealth extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setFood(int value) {
+	public WrapperPlayServerUpdateHealth setFood(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -89,8 +91,9 @@ public class WrapperPlayServerUpdateHealth extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setFoodSaturation(float value) {
+	public WrapperPlayServerUpdateHealth setFoodSaturation(float value) {
 		handle.getFloat().write(1, value);
+		return this;
 	}
 
 }

@@ -122,24 +122,27 @@ public class WrapperPlayServerAdvancements extends AbstractPacket {
      * Set Reset/Clear.
      * @param value - new value.
      */
-    public void setReset(boolean value) {
+    public WrapperPlayServerAdvancements setReset(boolean value) {
         handle.getBooleans().write(0,  value);
+        return this;
     }
 
     public Optional<Map<MinecraftKey, SerializedAdvancement>> getAdvancements() {
         return handle.getMaps(MinecraftKey.getConverter(), WRAPPER).optionRead(0);
     }
 
-    public void setAdvancements(Map<MinecraftKey, SerializedAdvancement> value) {
+    public WrapperPlayServerAdvancements setAdvancements(Map<MinecraftKey, SerializedAdvancement> value) {
         handle.getMaps(MinecraftKey.getConverter(), WRAPPER).writeSafely(0, value);
+        return this;
     }
 
     public Optional<Set<MinecraftKey>> getKeys() {
         return handle.getSets(MinecraftKey.getConverter()).optionRead(0);
     }
 
-    public void setKeys(Set<MinecraftKey> value) {
+    public WrapperPlayServerAdvancements setKeys(Set<MinecraftKey> value) {
         handle.getSets(MinecraftKey.getConverter()).writeSafely(0, value);
+        return this;
     }
 
     public Optional<Map<MinecraftKey, AdvancementProgress>> getProgress() {

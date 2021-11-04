@@ -49,8 +49,9 @@ public class WrapperPlayClientEnchantItem extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setWindowId(byte value) {
+	public WrapperPlayClientEnchantItem setWindowId(byte value) {
 		handle.getIntegers().write(0, (int) value);
+		return this;
 	}
 
 	/**
@@ -70,8 +71,9 @@ public class WrapperPlayClientEnchantItem extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEnchantment(int value) {
+	public WrapperPlayClientEnchantItem setEnchantment(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 }

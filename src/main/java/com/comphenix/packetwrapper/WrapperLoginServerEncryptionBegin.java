@@ -52,8 +52,9 @@ public class WrapperLoginServerEncryptionBegin extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setServerId(String value) {
+	public WrapperLoginServerEncryptionBegin setServerId(String value) {
 		handle.getStrings().write(0, value);
+		return this;
 	}
 
 	/**
@@ -70,8 +71,9 @@ public class WrapperLoginServerEncryptionBegin extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setPublicKey(PublicKey value) {
+	public WrapperLoginServerEncryptionBegin setPublicKey(PublicKey value) {
 		handle.getSpecificModifier(PublicKey.class).write(0, value);
+		return this;
 	}
 
 	/**
@@ -88,7 +90,8 @@ public class WrapperLoginServerEncryptionBegin extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setVerifyToken(byte[] value) {
+	public WrapperLoginServerEncryptionBegin setVerifyToken(byte[] value) {
 		handle.getByteArrays().write(0, value);
+		return this;
 	}
 }

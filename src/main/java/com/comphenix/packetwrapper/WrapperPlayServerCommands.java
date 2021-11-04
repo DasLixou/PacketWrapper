@@ -43,7 +43,8 @@ public class WrapperPlayServerCommands extends AbstractPacket {
         return (RootCommandNode) handle.getModifier().read(0);
     }
 
-    public void setRoot(RootCommandNode node) {
+    public WrapperPlayServerCommands setRoot(RootCommandNode node) {
         handle.getModifier().write(0, node);
+        return this;
     }
 }

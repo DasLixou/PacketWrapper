@@ -47,8 +47,9 @@ public class WrapperPlayServerCamera extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setCameraId(int value) {
+	public WrapperPlayServerCamera setCameraId(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 }

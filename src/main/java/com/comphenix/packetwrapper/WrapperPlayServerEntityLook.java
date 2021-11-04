@@ -53,8 +53,9 @@ public class WrapperPlayServerEntityLook extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerEntityLook setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -91,8 +92,9 @@ public class WrapperPlayServerEntityLook extends AbstractPacket {
 	 * 
 	 * @param value - new yaw.
 	 */
-	public void setYaw(float value) {
+	public WrapperPlayServerEntityLook setYaw(float value) {
 		handle.getBytes().write(0, (byte) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	/**
@@ -109,8 +111,9 @@ public class WrapperPlayServerEntityLook extends AbstractPacket {
 	 * 
 	 * @param value - new pitch.
 	 */
-	public void setPitch(float value) {
+	public WrapperPlayServerEntityLook setPitch(float value) {
 		handle.getBytes().write(1, (byte) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	/**
@@ -127,7 +130,8 @@ public class WrapperPlayServerEntityLook extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setOnGround(boolean value) {
+	public WrapperPlayServerEntityLook setOnGround(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 }

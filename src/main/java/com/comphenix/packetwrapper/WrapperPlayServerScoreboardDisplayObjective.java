@@ -51,8 +51,9 @@ public class WrapperPlayServerScoreboardDisplayObjective extends AbstractPacket 
 	 * 
 	 * @param value - new value.
 	 */
-	public void setPosition(int value) {
+	public WrapperPlayServerScoreboardDisplayObjective setPosition(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -71,8 +72,9 @@ public class WrapperPlayServerScoreboardDisplayObjective extends AbstractPacket 
 	 * 
 	 * @param value - new value.
 	 */
-	public void setScoreName(String value) {
+	public WrapperPlayServerScoreboardDisplayObjective setScoreName(String value) {
 		handle.getStrings().write(0, value);
+		return this;
 	}
 
 }

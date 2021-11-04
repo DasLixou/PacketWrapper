@@ -55,8 +55,9 @@ public class WrapperPlayServerRemoveEntityEffect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerRemoveEntityEffect setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -83,7 +84,8 @@ public class WrapperPlayServerRemoveEntityEffect extends AbstractPacket {
 		return handle.getEffectTypes().read(0);
 	}
 
-	public void setEffect(PotionEffectType value) {
+	public WrapperPlayServerRemoveEntityEffect setEffect(PotionEffectType value) {
 		handle.getEffectTypes().write(0, value);
+		return this;
 	}
 }

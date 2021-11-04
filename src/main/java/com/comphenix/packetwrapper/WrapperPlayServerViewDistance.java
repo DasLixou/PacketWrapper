@@ -48,8 +48,9 @@ public class WrapperPlayServerViewDistance extends AbstractPacket {
      * Set View Distance.
      * @param value - new value.
      */
-    public void setViewDistance(int value) {
+    public WrapperPlayServerViewDistance setViewDistance(int value) {
         handle.getIntegers().write(0, value);
+        return this;
     }
     
 }

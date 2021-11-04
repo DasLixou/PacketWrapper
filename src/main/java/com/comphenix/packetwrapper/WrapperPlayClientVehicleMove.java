@@ -50,8 +50,9 @@ public class WrapperPlayClientVehicleMove extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setX(double value) {
+	public WrapperPlayClientVehicleMove setX(double value) {
 		handle.getDoubles().write(0, value);
+		return this;
 	}
 
 	/**
@@ -70,8 +71,9 @@ public class WrapperPlayClientVehicleMove extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setY(double value) {
+	public WrapperPlayClientVehicleMove setY(double value) {
 		handle.getDoubles().write(1, value);
+		return this;
 	}
 
 	/**
@@ -90,8 +92,9 @@ public class WrapperPlayClientVehicleMove extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setZ(double value) {
+	public WrapperPlayClientVehicleMove setZ(double value) {
 		handle.getDoubles().write(2, value);
+		return this;
 	}
 
 	/**
@@ -110,8 +113,9 @@ public class WrapperPlayClientVehicleMove extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setYaw(float value) {
+	public WrapperPlayClientVehicleMove setYaw(float value) {
 		handle.getFloat().write(0, value);
+		return this;
 	}
 
 	/**
@@ -130,8 +134,9 @@ public class WrapperPlayClientVehicleMove extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setPitch(float value) {
+	public WrapperPlayClientVehicleMove setPitch(float value) {
 		handle.getFloat().write(1, value);
+		return this;
 	}
 
 }

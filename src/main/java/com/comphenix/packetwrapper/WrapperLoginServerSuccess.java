@@ -48,7 +48,8 @@ public class WrapperLoginServerSuccess extends AbstractPacket {
 	 * 
 	 * @param value - new profile.
 	 */
-	public void setProfile(WrappedGameProfile value) {
+	public WrapperLoginServerSuccess setProfile(WrappedGameProfile value) {
 		handle.getGameProfiles().write(0, value);
+		return this;
 	}
 }

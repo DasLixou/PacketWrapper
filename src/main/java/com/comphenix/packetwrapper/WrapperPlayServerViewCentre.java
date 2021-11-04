@@ -48,8 +48,9 @@ public class WrapperPlayServerViewCentre extends AbstractPacket {
      * Set Chunk X.
      * @param value - new value.
      */
-    public void setChunkX(int value) {
+    public WrapperPlayServerViewCentre setChunkX(int value) {
         handle.getIntegers().write(0, value);
+        return this;
     }
     
     /**
@@ -66,8 +67,9 @@ public class WrapperPlayServerViewCentre extends AbstractPacket {
      * Set Chunk Z.
      * @param value - new value.
      */
-    public void setChunkZ(int value) {
+    public WrapperPlayServerViewCentre setChunkZ(int value) {
         handle.getIntegers().write(1, value);
+        return this;
     }
     
 }

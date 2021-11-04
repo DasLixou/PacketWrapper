@@ -56,8 +56,9 @@ public class WrapperPlayServerOpenWindow extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setWindowID(int value) {
+	public WrapperPlayServerOpenWindow setWindowID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -78,8 +79,9 @@ public class WrapperPlayServerOpenWindow extends AbstractPacket {
 	 * @param value - new value.
 	 */
 	@Removed
-	public void setInventoryType(String value) {
+	public WrapperPlayServerOpenWindow setInventoryType(String value) {
 		handle.getStrings().write(0, value);
+		return this;
 	}
 
 	/**
@@ -98,8 +100,9 @@ public class WrapperPlayServerOpenWindow extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setWindowTitle(WrappedChatComponent value) {
+	public WrapperPlayServerOpenWindow setWindowTitle(WrappedChatComponent value) {
 		handle.getChatComponents().write(0, value);
+		return this;
 	}
 
 	/**
@@ -119,8 +122,9 @@ public class WrapperPlayServerOpenWindow extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setNumberOfSlots(int value) {
+	public WrapperPlayServerOpenWindow setNumberOfSlots(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	/**
@@ -139,8 +143,9 @@ public class WrapperPlayServerOpenWindow extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerOpenWindow setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**

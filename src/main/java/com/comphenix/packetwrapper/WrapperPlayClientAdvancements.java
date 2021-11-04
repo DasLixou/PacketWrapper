@@ -49,8 +49,9 @@ public class WrapperPlayClientAdvancements extends AbstractPacket {
      * Set Action.
      * @param value - new value.
      */
-    public void setAction(Status value) {
+    public WrapperPlayClientAdvancements setAction(Status value) {
         handle.getEnumModifier(Status.class, 0).writeSafely(0, value);
+        return this;
     }
     /**
      * Retrieve Tab ID.
@@ -66,8 +67,9 @@ public class WrapperPlayClientAdvancements extends AbstractPacket {
      * Set Tab ID.
      * @param value - new value.
      */
-    public void setTabId(MinecraftKey value) {
+    public WrapperPlayClientAdvancements setTabId(MinecraftKey value) {
         handle.getMinecraftKeys().writeSafely(0, value);
+        return this;
     }
 
     public enum Status {

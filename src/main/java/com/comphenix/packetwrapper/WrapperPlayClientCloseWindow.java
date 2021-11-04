@@ -49,8 +49,9 @@ public class WrapperPlayClientCloseWindow extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setWindowId(int value) {
+	public WrapperPlayClientCloseWindow setWindowId(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 }

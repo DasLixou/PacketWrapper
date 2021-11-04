@@ -56,8 +56,9 @@ public class WrapperPlayServerEntityEquipment extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerEntityEquipment setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -84,8 +85,9 @@ public class WrapperPlayServerEntityEquipment extends AbstractPacket {
 		return handle.getItemSlots().read(0);
 	}
 
-	public void setSlot(ItemSlot value) {
+	public WrapperPlayServerEntityEquipment setSlot(ItemSlot value) {
 		handle.getItemSlots().write(0, value);
+		return this;
 	}
 
 	/**
@@ -104,7 +106,8 @@ public class WrapperPlayServerEntityEquipment extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setItem(ItemStack value) {
+	public WrapperPlayServerEntityEquipment setItem(ItemStack value) {
 		handle.getItemModifier().write(0, value);
+		return this;
 	}
 }

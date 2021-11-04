@@ -38,71 +38,80 @@ public class WrapperPlayServerWorldBorder extends AbstractPacket {
 		return handle.getWorldBorderActions().read(0);
 	}
 
-	public void setAction(WorldBorderAction value) {
+	public WrapperPlayServerWorldBorder setAction(WorldBorderAction value) {
 		handle.getWorldBorderActions().write(0, value);
+		return this;
 	}
 
 	public int getPortalTeleportBoundary() {
 		return handle.getIntegers().read(0);
 	}
 
-	public void setPortalTeleportBoundary(int value) {
+	public WrapperPlayServerWorldBorder setPortalTeleportBoundary(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	public double getCenterX() {
 		return handle.getDoubles().read(0);
 	}
 
-	public void setCenterX(double value) {
+	public WrapperPlayServerWorldBorder setCenterX(double value) {
 		handle.getDoubles().write(0, value);
+		return this;
 	}
 
 	public double getCenterZ() {
 		return handle.getDoubles().read(1);
 	}
 
-	public void setCenterZ(double value) {
+	public WrapperPlayServerWorldBorder setCenterZ(double value) {
 		handle.getDoubles().write(1, value);
+		return this;
 	}
 
 	public double getOldRadius() {
 		return handle.getDoubles().read(2);
 	}
 
-	public void setOldRadius(double value) {
+	public WrapperPlayServerWorldBorder setOldRadius(double value) {
 		handle.getDoubles().write(2, value);
+		return this;
 	}
 
 	public double getRadius() {
 		return handle.getDoubles().read(3);
 	}
 
-	public void setRadius(double value) {
+	public WrapperPlayServerWorldBorder setRadius(double value) {
 		handle.getDoubles().write(3, value);
+		return this;
 	}
 
 	public long getSpeed() {
 		return handle.getLongs().read(0);
 	}
 
-	public void setSpeed(long value) {
+	public WrapperPlayServerWorldBorder setSpeed(long value) {
 		handle.getLongs().write(0, value);
+		return this;
 	}
 
 	public int getWarningTime() {
 		return handle.getIntegers().read(1);
 	}
 
-	public void setWarningTime(int value) {
+	public WrapperPlayServerWorldBorder setWarningTime(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	public int getWarningDistance() {
 		return handle.getIntegers().read(2);
 	}
 
-	public void setWarningDistance(int value) {
+	public WrapperPlayServerWorldBorder setWarningDistance(int value) {
 		handle.getIntegers().write(2, value);
+		return this;
 	}
 }

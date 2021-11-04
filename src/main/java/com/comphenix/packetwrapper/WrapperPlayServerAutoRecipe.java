@@ -46,8 +46,9 @@ public class WrapperPlayServerAutoRecipe extends AbstractPacket {
      * Set Window ID.
      * @param value - new value.
      */
-    public void setWindowId(int value) {
+    public WrapperPlayServerAutoRecipe setWindowId(int value) {
         handle.getIntegers().write(0, value);
+        return this;
     }
     
     // Wrapper for recipe can be created upon request

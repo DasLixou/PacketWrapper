@@ -55,8 +55,9 @@ public class WrapperPlayServerBlockBreakAnimation extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerBlockBreakAnimation setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -95,8 +96,9 @@ public class WrapperPlayServerBlockBreakAnimation extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setLocation(BlockPosition value) {
+	public WrapperPlayServerBlockBreakAnimation setLocation(BlockPosition value) {
 		handle.getBlockPositionModifier().write(0, value);
+		return this;
 	}
 
 	/**
@@ -115,8 +117,9 @@ public class WrapperPlayServerBlockBreakAnimation extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setDestroyStage(int value) {
+	public WrapperPlayServerBlockBreakAnimation setDestroyStage(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 }

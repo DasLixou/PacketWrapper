@@ -54,16 +54,18 @@ public class WrapperPlayServerChat extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setMessage(WrappedChatComponent value) {
+	public WrapperPlayServerChat setMessage(WrappedChatComponent value) {
 		handle.getChatComponents().write(0, value);
+		return this;
 	}
 
 	public ChatType getChatType() {
 		return handle.getChatTypes().read(0);
 	}
 
-	public void setChatType(ChatType type) {
+	public WrapperPlayServerChat setChatType(ChatType type) {
 		handle.getChatTypes().write(0, type);
+		return this;
 	}
 
 	/**
@@ -92,7 +94,7 @@ public class WrapperPlayServerChat extends AbstractPacket {
 	 * @deprecated Magic values replaced by enum
 	 */
 	@Deprecated
-	public void setPosition(byte value) {
+	public WrapperPlayServerChat setPosition(byte value) {
 		handle.getBytes().writeSafely(0, value);
 
 		if (EnumWrappers.getChatTypeClass() != null)
@@ -100,5 +102,7 @@ public class WrapperPlayServerChat extends AbstractPacket {
 			Arrays.stream(ChatType.values()).filter(t -> t.getId() == value).findAny()
 			      .ifPresent(t -> handle.getChatTypes().writeSafely(0, t));
 		}
+
+		return this;
 	}
 }

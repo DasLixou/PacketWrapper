@@ -79,16 +79,18 @@ public class WrapperPlayServerMount extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerMount setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	public int[] getPassengerIds() {
 		return handle.getIntegerArrays().read(0);
 	}
 
-	public void setPassengerIds(int[] value) {
+	public WrapperPlayServerMount setPassengerIds(int[] value) {
 		handle.getIntegerArrays().write(0, value);
+		return this;
 	}
 
 	public List<Entity> getPassengers(PacketEvent event) {
@@ -110,12 +112,13 @@ public class WrapperPlayServerMount extends AbstractPacket {
 		return passengers;
 	}
 
-	public void setPassengers(List<Entity> value) {
+	public WrapperPlayServerMount setPassengers(List<Entity> value) {
 		int[] array = new int[value.size()];
 		for (int i = 0; i < value.size(); i++) {
 			array[i] = value.get(i).getEntityId();
 		}
 
 		setPassengerIds(array);
+		return this;
 	}
 }

@@ -49,8 +49,9 @@ public class WrapperPlayServerWindowData extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setWindowId(int value) {
+	public WrapperPlayServerWindowData setWindowId(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -69,8 +70,9 @@ public class WrapperPlayServerWindowData extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setProperty(int value) {
+	public WrapperPlayServerWindowData setProperty(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	/**
@@ -89,8 +91,9 @@ public class WrapperPlayServerWindowData extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setValue(int value) {
+	public WrapperPlayServerWindowData setValue(int value) {
 		handle.getIntegers().write(2, value);
+		return this;
 	}
 
 }

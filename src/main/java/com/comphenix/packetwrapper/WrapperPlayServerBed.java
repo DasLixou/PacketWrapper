@@ -58,8 +58,9 @@ public class WrapperPlayServerBed extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerBed setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -98,8 +99,9 @@ public class WrapperPlayServerBed extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setLocation(BlockPosition value) {
+	public WrapperPlayServerBed setLocation(BlockPosition value) {
 		handle.getBlockPositionModifier().write(0, value);
+		return this;
 	}
 
 }

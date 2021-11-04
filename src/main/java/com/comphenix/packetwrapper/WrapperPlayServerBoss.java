@@ -55,72 +55,81 @@ public class WrapperPlayServerBoss extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setUniqueId(UUID value) {
+	public WrapperPlayServerBoss setUniqueId(UUID value) {
 		handle.getUUIDs().write(0, value);
+		return this;
 	}
 
 	public Action getAction() {
 		return handle.getEnumModifier(Action.class, 1).read(0);
 	}
 
-	public void setAction(Action value) {
+	public WrapperPlayServerBoss setAction(Action value) {
 		handle.getEnumModifier(Action.class, 1).write(0, value);
+		return this;
 	}
 
 	public WrappedChatComponent getTitle() {
 		return handle.getChatComponents().read(0);
 	}
 
-	public void setTitle(WrappedChatComponent value) {
+	public WrapperPlayServerBoss setTitle(WrappedChatComponent value) {
 		handle.getChatComponents().write(0, value);
+		return this;
 	}
 
 	public float getHealth() {
 		return handle.getFloat().read(0);
 	}
 
-	public void setHealth(float value) {
+	public WrapperPlayServerBoss setHealth(float value) {
 		handle.getFloat().write(0, value);
+		return this;
 	}
 
 	public BarColor getColor() {
 		return handle.getEnumModifier(BarColor.class, 4).read(0);
 	}
 
-	public void setColor(BarColor value) {
+	public WrapperPlayServerBoss setColor(BarColor value) {
 		handle.getEnumModifier(BarColor.class, 4).write(0, value);
+		return this;
 	}
 
 	public BarStyle getStyle() {
 		return handle.getEnumModifier(BarStyle.class, 5).read(0);
 	}
 
-	public void setStyle(BarStyle value) {
+	public WrapperPlayServerBoss setStyle(BarStyle value) {
 		handle.getEnumModifier(BarStyle.class, 5).write(0, value);
+		return this;
 	}
 
 	public boolean isDarkenSky() {
 		return handle.getBooleans().read(0);
 	}
 
-	public void setDarkenSky(boolean value) {
+	public WrapperPlayServerBoss setDarkenSky(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 
 	public boolean isPlayMusic() {
 		return handle.getBooleans().read(1);
 	}
 
-	public void setPlayMusic(boolean value) {
+	public WrapperPlayServerBoss setPlayMusic(boolean value) {
 		handle.getBooleans().write(1, value);
+		return this;
 	}
 
 	public boolean isCreateFog() {
 		return handle.getBooleans().read(2);
 	}
 
-	public void setCreateFog(boolean value) {
+	public WrapperPlayServerBoss setCreateFog(boolean value) {
 		handle.getBooleans().write(2, value);
+		return this;
 	}
 
 	public static enum Action {

@@ -52,16 +52,18 @@ public class WrapperPlayClientBlockDig extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setLocation(BlockPosition value) {
+	public WrapperPlayClientBlockDig setLocation(BlockPosition value) {
 		handle.getBlockPositionModifier().write(0, value);
+		return this;
 	}
 
 	public Direction getDirection() {
 		return handle.getDirections().read(0);
 	}
 
-	public void setDirection(Direction value) {
+	public WrapperPlayClientBlockDig setDirection(Direction value) {
 		handle.getDirections().write(0, value);
+		return this;
 	}
 
 	/**
@@ -80,7 +82,8 @@ public class WrapperPlayClientBlockDig extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setStatus(PlayerDigType value) {
+	public WrapperPlayClientBlockDig setStatus(PlayerDigType value) {
 		handle.getPlayerDigTypes().write(0, value);
+		return this;
 	}
 }

@@ -47,8 +47,9 @@ public class WrapperPlayClientKeepAlive extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setKeepAliveId(long value) {
+	public WrapperPlayClientKeepAlive setKeepAliveId(long value) {
 		handle.getLongs().write(0, value);
+		return this;
 	}
 
 }

@@ -52,8 +52,9 @@ public class WrapperPlayClientSetCreativeSlot extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setSlot(int value) {
+	public WrapperPlayClientSetCreativeSlot setSlot(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -70,8 +71,9 @@ public class WrapperPlayClientSetCreativeSlot extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setClickedItem(ItemStack value) {
+	public WrapperPlayClientSetCreativeSlot setClickedItem(ItemStack value) {
 		handle.getItemModifier().write(0, value);
+		return this;
 	}
 
 }

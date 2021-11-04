@@ -49,8 +49,9 @@ public class WrapperPlayClientLook extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setYaw(float value) {
+	public WrapperPlayClientLook setYaw(float value) {
 		handle.getFloat().write(0, value);
+		return this;
 	}
 
 	/**
@@ -69,8 +70,9 @@ public class WrapperPlayClientLook extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setPitch(float value) {
+	public WrapperPlayClientLook setPitch(float value) {
 		handle.getFloat().write(1, value);
+		return this;
 	}
 
 	/**
@@ -89,8 +91,9 @@ public class WrapperPlayClientLook extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setOnGround(boolean value) {
+	public WrapperPlayClientLook setOnGround(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 
 }

@@ -50,8 +50,9 @@ public class WrapperPlayServerResourcePackSend extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setUrl(String value) {
+	public WrapperPlayServerResourcePackSend setUrl(String value) {
 		handle.getStrings().write(0, value);
+		return this;
 	}
 
 	/**
@@ -74,8 +75,9 @@ public class WrapperPlayServerResourcePackSend extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setHash(String value) {
+	public WrapperPlayServerResourcePackSend setHash(String value) {
 		handle.getStrings().write(1, value);
+		return this;
 	}
 
 }

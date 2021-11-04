@@ -50,8 +50,9 @@ public class WrapperPlayServerUnloadChunk extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setChunkX(int value) {
+	public WrapperPlayServerUnloadChunk setChunkX(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -70,8 +71,9 @@ public class WrapperPlayServerUnloadChunk extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setChunkZ(int value) {
+	public WrapperPlayServerUnloadChunk setChunkZ(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 }

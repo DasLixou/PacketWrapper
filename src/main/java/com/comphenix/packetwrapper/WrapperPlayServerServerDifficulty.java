@@ -51,8 +51,9 @@ public class WrapperPlayServerServerDifficulty extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setDifficulty(Difficulty value) {
+	public WrapperPlayServerServerDifficulty setDifficulty(Difficulty value) {
 		handle.getDifficulties().write(0, value);
+		return this;
 	}
 
 }

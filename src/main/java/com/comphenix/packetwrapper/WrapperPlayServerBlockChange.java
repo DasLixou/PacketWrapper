@@ -54,8 +54,9 @@ public class WrapperPlayServerBlockChange extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setLocation(BlockPosition value) {
+	public WrapperPlayServerBlockChange setLocation(BlockPosition value) {
 		handle.getBlockPositionModifier().write(0, value);
+		return this;
 	}
 
 	/**
@@ -82,7 +83,8 @@ public class WrapperPlayServerBlockChange extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setBlockData(WrappedBlockData value) {
+	public WrapperPlayServerBlockChange setBlockData(WrappedBlockData value) {
 		handle.getBlockData().write(0, value);
+		return this;
 	}
 }

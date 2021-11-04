@@ -50,8 +50,9 @@ public class WrapperPlayClientSetJigsaw extends AbstractPacket {
      * Set Location.
      * @param value - new value.
      */
-    public void setLocation(BlockPosition value) {
+    public WrapperPlayClientSetJigsaw setLocation(BlockPosition value) {
         handle.getBlockPositionModifier().write(0, value);
+        return this;
     }
     
     /**
@@ -66,8 +67,9 @@ public class WrapperPlayClientSetJigsaw extends AbstractPacket {
      * Set Attachment type.
      * @param value - new value.
      */
-    public void setAttachmentType(MinecraftKey value) {
+    public WrapperPlayClientSetJigsaw setAttachmentType(MinecraftKey value) {
         handle.getMinecraftKeys().write(0, value);
+        return this;
     }
     
     /**
@@ -82,8 +84,9 @@ public class WrapperPlayClientSetJigsaw extends AbstractPacket {
      * Set Target pool.
      * @param value - new value.
      */
-    public void setTargetPool(MinecraftKey value) {
+    public WrapperPlayClientSetJigsaw setTargetPool(MinecraftKey value) {
         handle.getMinecraftKeys().write(1, value);
+        return this;
     }
     
     /**
@@ -100,8 +103,9 @@ public class WrapperPlayClientSetJigsaw extends AbstractPacket {
      * Set Final state.
      * @param value - new value.
      */
-    public void setFinalState(String value) {
+    public WrapperPlayClientSetJigsaw setFinalState(String value) {
         handle.getStrings().write(0, value);
+        return this;
     }
     
 }

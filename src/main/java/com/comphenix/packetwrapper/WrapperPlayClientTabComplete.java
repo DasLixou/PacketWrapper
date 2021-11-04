@@ -39,15 +39,17 @@ public class WrapperPlayClientTabComplete extends AbstractPacket {
 		return handle.getIntegers().read(0);
 	}
 
-	public void setTransactionId(int value) {
+	public WrapperPlayClientTabComplete setTransactionId(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	public String getInput() {
 		return handle.getStrings().read(0);
 	}
 
-	public void setInput(String value) {
+	public WrapperPlayClientTabComplete setInput(String value) {
 		handle.getStrings().write(0, value);
+		return this;
 	}
 }

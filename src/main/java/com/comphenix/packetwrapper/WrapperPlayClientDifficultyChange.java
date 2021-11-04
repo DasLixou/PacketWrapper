@@ -49,8 +49,9 @@ public class WrapperPlayClientDifficultyChange extends AbstractPacket {
      * Set New difficulty.
      * @param value - new value.
      */
-    public void setNewDifficulty(Difficulty value) {
+    public WrapperPlayClientDifficultyChange setNewDifficulty(Difficulty value) {
         handle.getDifficulties().write(0, value);
+        return this;
     }
     
 }

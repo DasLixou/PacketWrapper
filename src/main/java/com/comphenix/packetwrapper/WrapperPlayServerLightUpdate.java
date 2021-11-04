@@ -51,8 +51,9 @@ public class WrapperPlayServerLightUpdate extends AbstractPacket {
      * Set Chunk X.
      * @param value - new value.
      */
-    public void setChunkX(int value) {
+    public WrapperPlayServerLightUpdate setChunkX(int value) {
         handle.getIntegers().write(0, value);
+        return this;
     }
     
     /**
@@ -69,8 +70,9 @@ public class WrapperPlayServerLightUpdate extends AbstractPacket {
      * Set Chunk Z.
      * @param value - new value.
      */
-    public void setChunkZ(int value) {
+    public WrapperPlayServerLightUpdate setChunkZ(int value) {
         handle.getIntegers().write(1, value);
+        return this;
     }
     
     /**
@@ -87,8 +89,9 @@ public class WrapperPlayServerLightUpdate extends AbstractPacket {
      * Set Sky Light Mask.
      * @param value - new value.
      */
-    public void setSkyLightMask(int value) {
+    public WrapperPlayServerLightUpdate setSkyLightMask(int value) {
         handle.getIntegers().write(2, value);
+        return this;
     }
     
     /**
@@ -105,8 +108,9 @@ public class WrapperPlayServerLightUpdate extends AbstractPacket {
      * Set Block Light Mask.
      * @param value - new value.
      */
-    public void setBlockLightMask(int value) {
+    public WrapperPlayServerLightUpdate setBlockLightMask(int value) {
         handle.getIntegers().write(3, value);
+        return this;
     }
     
     /**
@@ -123,8 +127,9 @@ public class WrapperPlayServerLightUpdate extends AbstractPacket {
      * Set Empty Sky Light Mask.
      * @param value - new value.
      */
-    public void setEmptySkyLightMask(int value) {
+    public WrapperPlayServerLightUpdate setEmptySkyLightMask(int value) {
         handle.getIntegers().write(4, value);
+        return this;
     }
     
     /**
@@ -141,8 +146,9 @@ public class WrapperPlayServerLightUpdate extends AbstractPacket {
      * Set Empty Block Light Mask.
      * @param value - new value.
      */
-    public void setEmptyBlockLightMask(int value) {
+    public WrapperPlayServerLightUpdate setEmptyBlockLightMask(int value) {
         handle.getIntegers().write(5, value);
+        return this;
     }
     
     /**
@@ -159,8 +165,9 @@ public class WrapperPlayServerLightUpdate extends AbstractPacket {
      * Set Sky Light arrays.
      * @param value - new value.
      */
-    public void setSkyLightArrays(List<BlockPosition> value) {
+    public WrapperPlayServerLightUpdate setSkyLightArrays(List<BlockPosition> value) {
         handle.getBlockPositionCollectionModifier().write(0, value);
+        return this;
     }
     
     /**
@@ -177,8 +184,9 @@ public class WrapperPlayServerLightUpdate extends AbstractPacket {
      * Set Sky Light array.
      * @param value - new value.
      */
-    public void setSkyLightArray(List<BlockPosition> value) {
+    public WrapperPlayServerLightUpdate setSkyLightArray(List<BlockPosition> value) {
         handle.getBlockPositionCollectionModifier().write(1, value);
+        return this;
     }
     
     // Cannot generate field Block Light arrays

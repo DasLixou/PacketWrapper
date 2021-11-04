@@ -49,8 +49,9 @@ public class WrapperPlayServerPlayerListHeaderFooter extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setHeader(WrappedChatComponent value) {
+	public WrapperPlayServerPlayerListHeaderFooter setHeader(WrappedChatComponent value) {
 		handle.getChatComponents().write(0, value);
+		return this;
 	}
 
 	/**
@@ -67,8 +68,9 @@ public class WrapperPlayServerPlayerListHeaderFooter extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setFooter(WrappedChatComponent value) {
+	public WrapperPlayServerPlayerListHeaderFooter setFooter(WrappedChatComponent value) {
 		handle.getChatComponents().write(1, value);
+		return this;
 	}
 
 }

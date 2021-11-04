@@ -38,16 +38,18 @@ public class WrapperPlayClientBlockPlace extends AbstractPacket {
 		return handle.getHands().read(0);
 	}
 
-	public void setHand(Hand value) {
+	public WrapperPlayClientBlockPlace setHand(Hand value) {
 		handle.getHands().write(0, value);
+		return this;
 	}
 
 	public long getTimestamp() {
 		return handle.getLongs().read(0);
 	}
 
-	public void setTimestamp(long value) {
+	public WrapperPlayClientBlockPlace setTimestamp(long value) {
 		handle.getLongs().write(0, value);
+		return this;
 	}
 
 }

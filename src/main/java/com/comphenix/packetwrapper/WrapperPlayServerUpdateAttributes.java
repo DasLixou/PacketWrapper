@@ -57,8 +57,9 @@ public class WrapperPlayServerUpdateAttributes extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerUpdateAttributes setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -95,7 +96,8 @@ public class WrapperPlayServerUpdateAttributes extends AbstractPacket {
 	 * 
 	 * @param value - new/updated attributes.
 	 */
-	public void setAttributes(List<WrappedAttribute> value) {
+	public WrapperPlayServerUpdateAttributes setAttributes(List<WrappedAttribute> value) {
 		handle.getAttributeCollectionModifier().write(0, value);
+		return this;
 	}
 }

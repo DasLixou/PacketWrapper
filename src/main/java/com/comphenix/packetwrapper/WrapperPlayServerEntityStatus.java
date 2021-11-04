@@ -53,8 +53,9 @@ public class WrapperPlayServerEntityStatus extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerEntityStatus setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -93,7 +94,8 @@ public class WrapperPlayServerEntityStatus extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityStatus(byte value) {
+	public WrapperPlayServerEntityStatus setEntityStatus(byte value) {
 		handle.getBytes().write(0, value);
+		return this;
 	}
 }

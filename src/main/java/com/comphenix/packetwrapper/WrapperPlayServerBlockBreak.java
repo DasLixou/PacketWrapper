@@ -51,8 +51,9 @@ public class WrapperPlayServerBlockBreak extends AbstractPacket {
      * Set Location.
      * @param value - new value.
      */
-    public void setLocation(BlockPosition value) {
+    public WrapperPlayServerBlockBreak setLocation(BlockPosition value) {
         handle.getBlockPositionModifier().write(0, value);
+        return this;
     }
     
     /**
@@ -69,8 +70,9 @@ public class WrapperPlayServerBlockBreak extends AbstractPacket {
      * Set Block.
      * @param value - new value.
      */
-    public void setBlock(WrappedBlockData value) {
+    public WrapperPlayServerBlockBreak setBlock(WrappedBlockData value) {
         handle.getBlockData().write(0, value);
+        return this;
     }
     
     /**
@@ -87,8 +89,9 @@ public class WrapperPlayServerBlockBreak extends AbstractPacket {
      * Set Status.
      * @param value - new value.
      */
-    public void setStatus(PlayerDigType value) {
+    public WrapperPlayServerBlockBreak setStatus(PlayerDigType value) {
         handle.getPlayerDigTypes().write(0, value);
+        return this;
     }
     
     /**
@@ -105,8 +108,9 @@ public class WrapperPlayServerBlockBreak extends AbstractPacket {
      * Set Successful.
      * @param value - new value.
      */
-    public void setSuccessful(boolean value) {
+    public WrapperPlayServerBlockBreak setSuccessful(boolean value) {
         handle.getBooleans().write(0, value);
+        return this;
     }
     
 }

@@ -38,16 +38,18 @@ public class WrapperPlayClientBoatMove extends AbstractPacket {
 		return handle.getBooleans().read(0);
 	}
 
-	public void setLeftOar(boolean value) {
+	public WrapperPlayClientBoatMove setLeftOar(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 
 	public boolean getRightOar() {
 		return handle.getBooleans().read(1);
 	}
 
-	public void setRightOar(boolean value) {
+	public WrapperPlayClientBoatMove setRightOar(boolean value) {
 		handle.getBooleans().write(1, value);
+		return this;
 	}
 
 }

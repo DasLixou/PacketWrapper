@@ -141,16 +141,18 @@ public class WrapperPlayServerSpawnEntity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerSpawnEntity setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	public UUID getUniqueId() {
 		return handle.getUUIDs().read(0);
 	}
 
-	public void setUniqueId(UUID value) {
+	public WrapperPlayServerSpawnEntity setUniqueId(UUID value) {
 		handle.getUUIDs().write(0, value);
+		return this;
 	}
 
 	/**
@@ -169,8 +171,9 @@ public class WrapperPlayServerSpawnEntity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setX(double value) {
+	public WrapperPlayServerSpawnEntity setX(double value) {
 		handle.getDoubles().write(0, value);
+		return this;
 	}
 
 	/**
@@ -189,8 +192,9 @@ public class WrapperPlayServerSpawnEntity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setY(double value) {
+	public WrapperPlayServerSpawnEntity setY(double value) {
 		handle.getDoubles().write(1, value);
+		return this;
 	}
 
 	/**
@@ -209,8 +213,9 @@ public class WrapperPlayServerSpawnEntity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setZ(double value) {
+	public WrapperPlayServerSpawnEntity setZ(double value) {
 		handle.getDoubles().write(2, value);
+		return this;
 	}
 
 	/**
@@ -229,8 +234,9 @@ public class WrapperPlayServerSpawnEntity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setOptionalSpeedX(double value) {
+	public WrapperPlayServerSpawnEntity setOptionalSpeedX(double value) {
 		handle.getIntegers().write(1, (int) (value * 8000.0D));
+		return this;
 	}
 
 	/**
@@ -249,8 +255,9 @@ public class WrapperPlayServerSpawnEntity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setOptionalSpeedY(double value) {
+	public WrapperPlayServerSpawnEntity setOptionalSpeedY(double value) {
 		handle.getIntegers().write(2, (int) (value * 8000.0D));
+		return this;
 	}
 
 	/**
@@ -269,8 +276,9 @@ public class WrapperPlayServerSpawnEntity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setOptionalSpeedZ(double value) {
+	public WrapperPlayServerSpawnEntity setOptionalSpeedZ(double value) {
 		handle.getIntegers().write(3, (int) (value * 8000.0D));
+		return this;
 	}
 
 	/**
@@ -287,8 +295,9 @@ public class WrapperPlayServerSpawnEntity extends AbstractPacket {
 	 * 
 	 * @param value - new pitch.
 	 */
-	public void setPitch(float value) {
+	public WrapperPlayServerSpawnEntity setPitch(float value) {
 		handle.getIntegers().write(4, (int) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	/**
@@ -305,8 +314,9 @@ public class WrapperPlayServerSpawnEntity extends AbstractPacket {
 	 * 
 	 * @param value - new yaw.
 	 */
-	public void setYaw(float value) {
+	public WrapperPlayServerSpawnEntity setYaw(float value) {
 		handle.getIntegers().write(5, (int) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	/**
@@ -323,8 +333,9 @@ public class WrapperPlayServerSpawnEntity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setType(EntityType value) {
+	public WrapperPlayServerSpawnEntity setType(EntityType value) {
 		handle.getEntityTypeModifier().write(0, value);
+		return this;
 	}
 
 	/**
@@ -373,7 +384,8 @@ public class WrapperPlayServerSpawnEntity extends AbstractPacket {
 	 * 
 	 * @param value - new object data.
 	 */
-	public void setObjectData(int value) {
+	public WrapperPlayServerSpawnEntity setObjectData(int value) {
 		handle.getIntegers().write(6, value);
+		return this;
 	}
 }

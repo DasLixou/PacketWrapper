@@ -47,8 +47,9 @@ public class WrapperStatusClientPing extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setTime(long value) {
+	public WrapperStatusClientPing setTime(long value) {
 		handle.getLongs().write(0, value);
+		return this;
 	}
 
 }

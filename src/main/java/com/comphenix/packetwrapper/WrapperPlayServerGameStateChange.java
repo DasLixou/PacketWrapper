@@ -48,8 +48,9 @@ public class WrapperPlayServerGameStateChange extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setReason(int value) {
+	public WrapperPlayServerGameStateChange setReason(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -68,8 +69,9 @@ public class WrapperPlayServerGameStateChange extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setValue(float value) {
+	public WrapperPlayServerGameStateChange setValue(float value) {
 		handle.getFloat().write(0, value);
+		return this;
 	}
 
 }

@@ -48,8 +48,9 @@ public class WrapperPlayServerRecipes extends AbstractPacket {
      * Set Action.
      * @param value - new value.
      */
-    public void setAction(Action value) {
+    public WrapperPlayServerRecipes setAction(Action value) {
         handle.getEnumModifier(Action.class, 0).writeSafely(0, value);
+        return this;
     }
     
     /**
@@ -66,8 +67,9 @@ public class WrapperPlayServerRecipes extends AbstractPacket {
      * Set Crafting Book Open.
      * @param value - new value.
      */
-    public void setCraftingBookOpen(boolean value) {
+    public WrapperPlayServerRecipes setCraftingBookOpen(boolean value) {
         handle.getBooleans().write(0, value);
+        return this;
     }
     
     /**
@@ -84,8 +86,9 @@ public class WrapperPlayServerRecipes extends AbstractPacket {
      * Set Filtering Craftable.
      * @param value - new value.
      */
-    public void setFilteringCraftable(boolean value) {
+    public WrapperPlayServerRecipes setFilteringCraftable(boolean value) {
         handle.getBooleans().write(0, value);
+        return this;
     }
 
     // recipe ids

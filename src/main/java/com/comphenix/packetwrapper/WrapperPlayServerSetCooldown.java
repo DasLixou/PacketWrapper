@@ -46,18 +46,20 @@ public class WrapperPlayServerSetCooldown extends AbstractPacket {
 				.<Material> withType(ITEM_CLASS, new ItemConverter()).read(0);
 	}
 
-	public void setItem(Material value) {
+	public WrapperPlayServerSetCooldown setItem(Material value) {
 		handle.getModifier()
 				.<Material> withType(ITEM_CLASS, new ItemConverter())
 				.write(0, value);
+		return this;
 	}
 
 	public int getTicks() {
 		return handle.getIntegers().read(0);
 	}
 
-	public void setTicks(int value) {
+	public WrapperPlayServerSetCooldown setTicks(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	private static class ItemConverter implements EquivalentConverter<Material> {

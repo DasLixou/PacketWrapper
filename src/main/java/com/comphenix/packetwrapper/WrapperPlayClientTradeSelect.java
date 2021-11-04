@@ -15,7 +15,8 @@ public class WrapperPlayClientTradeSelect extends AbstractPacket {
 		return handle.getIntegers().read(0);
 	}
 
-	public void setSlot(int value) {
+	public WrapperPlayClientTradeSelect setSlot(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 }

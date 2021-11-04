@@ -48,7 +48,8 @@ public class WrapperLoginClientStart extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setProfile(WrappedGameProfile value) {
+	public WrapperLoginClientStart setProfile(WrappedGameProfile value) {
 		handle.getGameProfiles().write(0, value);
+		return this;
 	}
 }

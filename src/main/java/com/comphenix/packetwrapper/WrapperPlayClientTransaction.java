@@ -49,8 +49,9 @@ public class WrapperPlayClientTransaction extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setWindowId(byte value) {
+	public WrapperPlayClientTransaction setWindowId(byte value) {
 		handle.getIntegers().write(0, (int) value);
+		return this;
 	}
 
 	/**
@@ -70,8 +71,9 @@ public class WrapperPlayClientTransaction extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setActionNumber(short value) {
+	public WrapperPlayClientTransaction setActionNumber(short value) {
 		handle.getShorts().write(0, value);
+		return this;
 	}
 
 	/**
@@ -90,8 +92,9 @@ public class WrapperPlayClientTransaction extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setAccepted(boolean value) {
+	public WrapperPlayClientTransaction setAccepted(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 
 }

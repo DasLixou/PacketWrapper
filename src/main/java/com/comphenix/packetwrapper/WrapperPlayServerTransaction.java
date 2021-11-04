@@ -49,8 +49,9 @@ public class WrapperPlayServerTransaction extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setWindowId(int value) {
+	public WrapperPlayServerTransaction setWindowId(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -70,8 +71,9 @@ public class WrapperPlayServerTransaction extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setActionNumber(short value) {
+	public WrapperPlayServerTransaction setActionNumber(short value) {
 		handle.getShorts().write(0, value);
+		return this;
 	}
 
 	/**
@@ -90,8 +92,9 @@ public class WrapperPlayServerTransaction extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setAccepted(boolean value) {
+	public WrapperPlayServerTransaction setAccepted(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 
 }

@@ -59,8 +59,9 @@ public class WrapperPlayServerNamedEntitySpawn extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerNamedEntitySpawn setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -99,8 +100,9 @@ public class WrapperPlayServerNamedEntitySpawn extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setPlayerUUID(UUID value) {
+	public WrapperPlayServerNamedEntitySpawn setPlayerUUID(UUID value) {
 		handle.getUUIDs().write(0, value);
+		return this;
 	}
 
 	/**
@@ -117,34 +119,38 @@ public class WrapperPlayServerNamedEntitySpawn extends AbstractPacket {
 	 * 
 	 * @param position - the new position.
 	 */
-	public void setPosition(Vector position) {
+	public WrapperPlayServerNamedEntitySpawn setPosition(Vector position) {
 		setX(position.getX());
 		setY(position.getY());
 		setZ(position.getZ());
+		return this;
 	}
 
 	public double getX() {
 		return handle.getDoubles().read(0);
 	}
 
-	public void setX(double value) {
+	public WrapperPlayServerNamedEntitySpawn setX(double value) {
 		handle.getDoubles().write(0, value);
+		return this;
 	}
 
 	public double getY() {
 		return handle.getDoubles().read(1);
 	}
 
-	public void setY(double value) {
+	public WrapperPlayServerNamedEntitySpawn setY(double value) {
 		handle.getDoubles().write(1, value);
+		return this;
 	}
 
 	public double getZ() {
 		return handle.getDoubles().read(2);
 	}
 
-	public void setZ(double value) {
+	public WrapperPlayServerNamedEntitySpawn setZ(double value) {
 		handle.getDoubles().write(2, value);
+		return this;
 	}
 
 	/**
@@ -161,8 +167,9 @@ public class WrapperPlayServerNamedEntitySpawn extends AbstractPacket {
 	 * 
 	 * @param value - new yaw.
 	 */
-	public void setYaw(float value) {
+	public WrapperPlayServerNamedEntitySpawn setYaw(float value) {
 		handle.getBytes().write(0, (byte) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	/**
@@ -179,8 +186,9 @@ public class WrapperPlayServerNamedEntitySpawn extends AbstractPacket {
 	 * 
 	 * @param value - new pitch.
 	 */
-	public void setPitch(float value) {
+	public WrapperPlayServerNamedEntitySpawn setPitch(float value) {
 		handle.getBytes().write(1, (byte) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	/**
@@ -201,7 +209,8 @@ public class WrapperPlayServerNamedEntitySpawn extends AbstractPacket {
 	 * @param value - new value.
 	 */
 	@Removed
-	public void setMetadata(WrappedDataWatcher value) {
+	public WrapperPlayServerNamedEntitySpawn setMetadata(WrappedDataWatcher value) {
 		handle.getDataWatcherModifier().write(0, value);
+		return this;
 	}
 }

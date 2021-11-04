@@ -49,8 +49,9 @@ public class WrapperPlayServerUpdateTime extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setAgeOfTheWorld(long value) {
+	public WrapperPlayServerUpdateTime setAgeOfTheWorld(long value) {
 		handle.getLongs().write(0, value);
+		return this;
 	}
 
 	/**
@@ -70,8 +71,9 @@ public class WrapperPlayServerUpdateTime extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setTimeOfDay(long value) {
+	public WrapperPlayServerUpdateTime setTimeOfDay(long value) {
 		handle.getLongs().write(1, value);
+		return this;
 	}
 
 }

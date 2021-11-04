@@ -54,8 +54,9 @@ public class WrapperPlayServerEntitySound extends AbstractPacket {
      * Set Sound ID.
      * @param value - new value.
      */
-    public void setSound(Sound value) {
+    public WrapperPlayServerEntitySound setSound(Sound value) {
         handle.getSoundEffects().write(0, value);
+        return this;
     }
     
     /**
@@ -72,8 +73,9 @@ public class WrapperPlayServerEntitySound extends AbstractPacket {
      * Set Sound Category.
      * @param value - new value.
      */
-    public void setSoundCategory(SoundCategory value) {
+    public WrapperPlayServerEntitySound setSoundCategory(SoundCategory value) {
         handle.getSoundCategories().write(0, value);
+        return this;
     }
     
     /**
@@ -106,8 +108,9 @@ public class WrapperPlayServerEntitySound extends AbstractPacket {
      * Set Entity ID.
      * @param value - new value.
      */
-    public void setEntityID(int value) {
+    public WrapperPlayServerEntitySound setEntityID(int value) {
         handle.getIntegers().write(0, value);
+        return this;
     }
     
     /**
@@ -124,8 +127,9 @@ public class WrapperPlayServerEntitySound extends AbstractPacket {
      * Set Volume.
      * @param value - new value.
      */
-    public void setVolume(float value) {
+    public WrapperPlayServerEntitySound setVolume(float value) {
         handle.getFloat().write(0, value);
+        return this;
     }
     
     /**
@@ -142,8 +146,9 @@ public class WrapperPlayServerEntitySound extends AbstractPacket {
      * Set Pitch.
      * @param value - new value.
      */
-    public void setPitch(float value) {
+    public WrapperPlayServerEntitySound setPitch(float value) {
         handle.getFloat().write(1, value);
+        return this;
     }
     
 }

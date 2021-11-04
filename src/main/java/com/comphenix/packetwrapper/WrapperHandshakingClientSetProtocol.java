@@ -51,8 +51,9 @@ public class WrapperHandshakingClientSetProtocol extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setProtocolVersion(int value) {
+	public WrapperHandshakingClientSetProtocol setProtocolVersion(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -71,8 +72,9 @@ public class WrapperHandshakingClientSetProtocol extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setServerAddressHostnameOrIp(String value) {
+	public WrapperHandshakingClientSetProtocol setServerAddressHostnameOrIp(String value) {
 		handle.getStrings().write(0, value);
+		return this;
 	}
 
 	/**
@@ -91,8 +93,9 @@ public class WrapperHandshakingClientSetProtocol extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setServerPort(int value) {
+	public WrapperHandshakingClientSetProtocol setServerPort(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	/**
@@ -111,8 +114,9 @@ public class WrapperHandshakingClientSetProtocol extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setNextState(Protocol value) {
+	public WrapperHandshakingClientSetProtocol setNextState(Protocol value) {
 		handle.getProtocols().write(0, value);
+		return this;
 	}
 
 }

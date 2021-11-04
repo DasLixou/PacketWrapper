@@ -50,8 +50,9 @@ public class WrapperPlayServerTileEntityData extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setLocation(BlockPosition value) {
+	public WrapperPlayServerTileEntityData setLocation(BlockPosition value) {
 		handle.getBlockPositionModifier().write(0, value);
+		return this;
 	}
 
 	/**
@@ -70,8 +71,9 @@ public class WrapperPlayServerTileEntityData extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setAction(int value) {
+	public WrapperPlayServerTileEntityData setAction(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -90,8 +92,9 @@ public class WrapperPlayServerTileEntityData extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setNbtData(NbtBase<?> value) {
+	public WrapperPlayServerTileEntityData setNbtData(NbtBase<?> value) {
 		handle.getNbtModifier().write(0, value);
+		return this;
 	}
 
 }

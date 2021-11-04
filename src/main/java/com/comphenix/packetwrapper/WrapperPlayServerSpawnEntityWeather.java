@@ -54,8 +54,9 @@ public class WrapperPlayServerSpawnEntityWeather extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerSpawnEntityWeather setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -94,8 +95,9 @@ public class WrapperPlayServerSpawnEntityWeather extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setType(int value) {
+	public WrapperPlayServerSpawnEntityWeather setType(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	/**
@@ -114,8 +116,9 @@ public class WrapperPlayServerSpawnEntityWeather extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setX(double value) {
+	public WrapperPlayServerSpawnEntityWeather setX(double value) {
 		handle.getDoubles().write(0, value);
+		return this;
 	}
 
 	/**
@@ -134,8 +137,9 @@ public class WrapperPlayServerSpawnEntityWeather extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setY(double value) {
+	public WrapperPlayServerSpawnEntityWeather setY(double value) {
 		handle.getDoubles().write(1, value);
+		return this;
 	}
 
 	/**
@@ -154,7 +158,8 @@ public class WrapperPlayServerSpawnEntityWeather extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setZ(double value) {
+	public WrapperPlayServerSpawnEntityWeather setZ(double value) {
 		handle.getDoubles().write(2, value);
+		return this;
 	}
 }

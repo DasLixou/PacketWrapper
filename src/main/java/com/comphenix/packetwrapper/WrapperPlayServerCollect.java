@@ -47,8 +47,9 @@ public class WrapperPlayServerCollect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setCollectedEntityId(int value) {
+	public WrapperPlayServerCollect setCollectedEntityId(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -65,8 +66,9 @@ public class WrapperPlayServerCollect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setCollectorEntityId(int value) {
+	public WrapperPlayServerCollect setCollectorEntityId(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 }

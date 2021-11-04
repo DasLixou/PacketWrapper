@@ -54,8 +54,9 @@ public class WrapperPlayServerWindowItems extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setWindowId(int value) {
+	public WrapperPlayServerWindowItems setWindowId(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -72,8 +73,9 @@ public class WrapperPlayServerWindowItems extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setSlotData(List<ItemStack> value) {
+	public WrapperPlayServerWindowItems setSlotData(List<ItemStack> value) {
 		handle.getItemListModifier().write(0, value);
+		return this;
 	}
 
 }

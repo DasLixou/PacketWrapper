@@ -53,8 +53,9 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      * Set Location.
      * @param value - new value.
      */
-    public void setLocation(BlockPosition value) {
+    public WrapperPlayClientStruct setLocation(BlockPosition value) {
         handle.getBlockPositionModifier().write(0, value);
+        return this;
     }
 
     public enum UpdateType {
@@ -78,8 +79,9 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      * Set Action.
      * @param value - new value.
      */
-    public void setAction(UpdateType value) {
+    public WrapperPlayClientStruct setAction(UpdateType value) {
         handle.getEnumModifier(UpdateType.class, 1).write(0, value);
+        return this;
     }
 
     public enum BlockPropertyStructureMode {
@@ -103,8 +105,9 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      * Set Mode.
      * @param value - new value.
      */
-    public void setMode(BlockPropertyStructureMode value) {
+    public WrapperPlayClientStruct setMode(BlockPropertyStructureMode value) {
         handle.getEnumModifier(BlockPropertyStructureMode.class, 2).write(0, value);
+        return this;
     }
     
     /**
@@ -119,8 +122,9 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      * Set Name.
      * @param value - new value.
      */
-    public void setName(String value) {
+    public WrapperPlayClientStruct setName(String value) {
         handle.getStrings().write(0, value);
+        return this;
     }
     
     /**
@@ -137,8 +141,9 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      * Set Offset X, Y, and Z
      * @param value - new value.
      */
-    public void setOffsets(BlockPosition value) {
+    public WrapperPlayClientStruct setOffsets(BlockPosition value) {
         handle.getBlockPositionModifier().write(1, value);
+        return this;
     }
     
     /**
@@ -155,8 +160,9 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      * Set Size X, Y, and Z
      * @param value - new value.
      */
-    public void setSizes(BlockPosition value) {
+    public WrapperPlayClientStruct setSizes(BlockPosition value) {
         handle.getBlockPositionModifier().write(2, value);
+        return this;
     }
 
     public enum BlockMirror {
@@ -179,8 +185,9 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      * Set Mirror.
      * @param value - new value.
      */
-    public void setMirror(BlockMirror value) {
+    public WrapperPlayClientStruct setMirror(BlockMirror value) {
         handle.getEnumModifier(BlockMirror.class, 6).write(0, value);
+        return this;
     }
 
     public enum BlockRotation {
@@ -204,8 +211,9 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      * Set Rotation.
      * @param value - new value.
      */
-    public void setRotation(BlockRotation value) {
+    public WrapperPlayClientStruct setRotation(BlockRotation value) {
         handle.getEnumModifier(BlockRotation.class, 7).write(1, value);
+        return this;
     }
     
     /**
@@ -220,8 +228,9 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      * Set Metadata.
      * @param value - new value.
      */
-    public void setMetadata(String value) {
+    public WrapperPlayClientStruct setMetadata(String value) {
         handle.getStrings().write(0, value);
+        return this;
     }
     
     /**
@@ -238,8 +247,9 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      * Set Integrity.
      * @param value - new value.
      */
-    public void setIntegrity(float value) {
+    public WrapperPlayClientStruct setIntegrity(float value) {
         handle.getFloat().write(0, value);
+        return this;
     }
     
     /**
@@ -254,31 +264,35 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      * Set Seed.
      * @param value - new value.
      */
-    public void setSeed(long value) {
+    public WrapperPlayClientStruct setSeed(long value) {
         handle.getLongs().write(0, value);
+        return this;
     }
     
     public boolean getIgnoreEntities() {
         return handle.getBooleans().read(0);
     }
 
-    public void setIgnoreEntities(boolean value) {
+    public WrapperPlayClientStruct setIgnoreEntities(boolean value) {
         handle.getBooleans().write(0, value);
+        return this;
     }
 
     public boolean getShowAir() {
         return handle.getBooleans().read(1);
     }
 
-    public void setShowAir(boolean value) {
+    public WrapperPlayClientStruct setShowAir(boolean value) {
         handle.getBooleans().write(1, value);
+        return this;
     }
 
     public boolean getShowBoundingBox() {
         return handle.getBooleans().read(2);
     }
 
-    public void setShowBoundingBox(boolean value) {
+    public WrapperPlayClientStruct setShowBoundingBox(boolean value) {
         handle.getBooleans().write(2, value);
+        return this;
     }
 }

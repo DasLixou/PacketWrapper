@@ -39,7 +39,8 @@ public class WrapperPlayServerSelectAdvancementTab extends AbstractPacket {
         return handle.getMinecraftKeys().readSafely(0);
     }
 
-    public void setKey(MinecraftKey key) {
+    public WrapperPlayServerSelectAdvancementTab setKey(MinecraftKey key) {
         handle.getMinecraftKeys().writeSafely(0, key);
+        return this;
     }
 }

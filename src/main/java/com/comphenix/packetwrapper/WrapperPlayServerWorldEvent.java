@@ -50,8 +50,9 @@ public class WrapperPlayServerWorldEvent extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEffectId(int value) {
+	public WrapperPlayServerWorldEvent setEffectId(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -70,8 +71,9 @@ public class WrapperPlayServerWorldEvent extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setLocation(BlockPosition value) {
+	public WrapperPlayServerWorldEvent setLocation(BlockPosition value) {
 		handle.getBlockPositionModifier().write(0, value);
+		return this;
 	}
 
 	/**
@@ -90,8 +92,9 @@ public class WrapperPlayServerWorldEvent extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setData(int value) {
+	public WrapperPlayServerWorldEvent setData(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	/**
@@ -110,8 +113,9 @@ public class WrapperPlayServerWorldEvent extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setDisableRelativeVolume(boolean value) {
+	public WrapperPlayServerWorldEvent setDisableRelativeVolume(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 
 }

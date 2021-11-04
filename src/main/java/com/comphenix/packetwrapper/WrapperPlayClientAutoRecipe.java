@@ -48,8 +48,9 @@ public class WrapperPlayClientAutoRecipe extends AbstractPacket {
      * Set Window ID.
      * @param value - new value.
      */
-    public void setWindowId(int value) {
+    public WrapperPlayClientAutoRecipe setWindowId(int value) {
         handle.getIntegers().write(0, value);
+        return this;
     }
 
     // Modifier for recipe can be created upon request
@@ -58,7 +59,8 @@ public class WrapperPlayClientAutoRecipe extends AbstractPacket {
         return handle.getBooleans().read(0);
     }
 
-    public void setMakeAll(boolean value) {
+    public WrapperPlayClientAutoRecipe setMakeAll(boolean value) {
         handle.getBooleans().write(0, value);
+        return this;
     }
 }

@@ -49,8 +49,9 @@ public class WrapperPlayClientPositionLook extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setX(double value) {
+	public WrapperPlayClientPositionLook setX(double value) {
 		handle.getDoubles().write(0, value);
+		return this;
 	}
 
 	/**
@@ -70,8 +71,9 @@ public class WrapperPlayClientPositionLook extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setY(double value) {
+	public WrapperPlayClientPositionLook setY(double value) {
 		handle.getDoubles().write(1, value);
+		return this;
 	}
 
 	/**
@@ -90,8 +92,9 @@ public class WrapperPlayClientPositionLook extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setZ(double value) {
+	public WrapperPlayClientPositionLook setZ(double value) {
 		handle.getDoubles().write(2, value);
+		return this;
 	}
 
 	/**
@@ -110,8 +113,9 @@ public class WrapperPlayClientPositionLook extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setYaw(float value) {
+	public WrapperPlayClientPositionLook setYaw(float value) {
 		handle.getFloat().write(0, value);
+		return this;
 	}
 
 	/**
@@ -130,8 +134,9 @@ public class WrapperPlayClientPositionLook extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setPitch(float value) {
+	public WrapperPlayClientPositionLook setPitch(float value) {
 		handle.getFloat().write(1, value);
+		return this;
 	}
 
 	/**
@@ -150,8 +155,9 @@ public class WrapperPlayClientPositionLook extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setOnGround(boolean value) {
+	public WrapperPlayClientPositionLook setOnGround(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 
 }

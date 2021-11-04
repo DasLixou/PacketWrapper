@@ -52,8 +52,9 @@ public class WrapperPlayServerEntityTeleport extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerEntityTeleport setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -80,24 +81,27 @@ public class WrapperPlayServerEntityTeleport extends AbstractPacket {
 		return handle.getDoubles().read(0);
 	}
 
-	public void setX(double value) {
+	public WrapperPlayServerEntityTeleport setX(double value) {
 		handle.getDoubles().write(0, value);
+		return this;
 	}
 
 	public double getY() {
 		return handle.getDoubles().read(1);
 	}
 
-	public void setY(double value) {
+	public WrapperPlayServerEntityTeleport setY(double value) {
 		handle.getDoubles().write(1, value);
+		return this;
 	}
 
 	public double getZ() {
 		return handle.getDoubles().read(2);
 	}
 
-	public void setZ(double value) {
+	public WrapperPlayServerEntityTeleport setZ(double value) {
 		handle.getDoubles().write(2, value);
+		return this;
 	}
 
 	/**
@@ -114,8 +118,9 @@ public class WrapperPlayServerEntityTeleport extends AbstractPacket {
 	 * 
 	 * @param value - new yaw.
 	 */
-	public void setYaw(float value) {
+	public WrapperPlayServerEntityTeleport setYaw(float value) {
 		handle.getBytes().write(0, (byte) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	/**
@@ -132,15 +137,17 @@ public class WrapperPlayServerEntityTeleport extends AbstractPacket {
 	 * 
 	 * @param value - new pitch.
 	 */
-	public void setPitch(float value) {
+	public WrapperPlayServerEntityTeleport setPitch(float value) {
 		handle.getBytes().write(1, (byte) (value * 256.0F / 360.0F));
+		return this;
 	}
 
 	public boolean getOnGround() {
 		return handle.getBooleans().read(0);
 	}
 
-	public void setOnGround(boolean value) {
+	public WrapperPlayServerEntityTeleport setOnGround(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 }

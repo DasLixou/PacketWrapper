@@ -47,8 +47,9 @@ public class WrapperPlayClientChat extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setMessage(String value) {
+	public WrapperPlayClientChat setMessage(String value) {
 		handle.getStrings().write(0, value);
+		return this;
 	}
 
 }

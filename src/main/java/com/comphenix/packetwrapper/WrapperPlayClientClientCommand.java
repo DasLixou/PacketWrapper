@@ -50,8 +50,9 @@ public class WrapperPlayClientClientCommand extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setAction(ClientCommand value) {
+	public WrapperPlayClientClientCommand setAction(ClientCommand value) {
 		handle.getClientCommands().write(0, value);
+		return this;
 	}
 
 }

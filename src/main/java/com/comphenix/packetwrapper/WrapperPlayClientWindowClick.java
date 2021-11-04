@@ -51,8 +51,9 @@ public class WrapperPlayClientWindowClick extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setWindowId(int value) {
+	public WrapperPlayClientWindowClick setWindowId(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -71,8 +72,9 @@ public class WrapperPlayClientWindowClick extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setSlot(int value) {
+	public WrapperPlayClientWindowClick setSlot(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	/**
@@ -91,8 +93,9 @@ public class WrapperPlayClientWindowClick extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setButton(int value) {
+	public WrapperPlayClientWindowClick setButton(int value) {
 		handle.getIntegers().write(2, value);
+		return this;
 	}
 
 	/**
@@ -112,8 +115,9 @@ public class WrapperPlayClientWindowClick extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setActionNumber(short value) {
+	public WrapperPlayClientWindowClick setActionNumber(short value) {
 		handle.getShorts().write(0, value);
+		return this;
 	}
 
 	/**
@@ -130,16 +134,18 @@ public class WrapperPlayClientWindowClick extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setClickedItem(ItemStack value) {
+	public WrapperPlayClientWindowClick setClickedItem(ItemStack value) {
 		handle.getItemModifier().write(0, value);
+		return this;
 	}
 
 	public InventoryClickType getShift() {
 		return handle.getEnumModifier(InventoryClickType.class, 5).read(0);
 	}
 
-	public void setShift(InventoryClickType value) {
+	public WrapperPlayClientWindowClick setShift(InventoryClickType value) {
 		handle.getEnumModifier(InventoryClickType.class, 5).write(0, value);
+		return this;
 	}
 
 	public enum InventoryClickType {

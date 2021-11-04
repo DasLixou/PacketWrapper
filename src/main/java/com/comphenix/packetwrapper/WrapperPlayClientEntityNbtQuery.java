@@ -52,8 +52,9 @@ public class WrapperPlayClientEntityNbtQuery extends AbstractPacket {
      * Set Transaction ID.
      * @param value - new value.
      */
-    public void setTransactionId(int value) {
+    public WrapperPlayClientEntityNbtQuery setTransactionId(int value) {
         handle.getIntegers().write(0, value);
+        return this;
     }
     
     /**
@@ -88,8 +89,9 @@ public class WrapperPlayClientEntityNbtQuery extends AbstractPacket {
      * Set Entity ID.
      * @param value - new value.
      */
-    public void setEntityID(int value) {
+    public WrapperPlayClientEntityNbtQuery setEntityID(int value) {
         handle.getIntegers().write(1, value);
+        return this;
     }
     
 }

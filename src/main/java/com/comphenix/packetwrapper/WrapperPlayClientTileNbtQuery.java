@@ -49,8 +49,9 @@ public class WrapperPlayClientTileNbtQuery extends AbstractPacket {
      * Set Transaction ID.
      * @param value - new value.
      */
-    public void setTransactionId(int value) {
+    public WrapperPlayClientTileNbtQuery setTransactionId(int value) {
         handle.getIntegers().write(0, value);
+        return this;
     }
     
     /**
@@ -67,8 +68,9 @@ public class WrapperPlayClientTileNbtQuery extends AbstractPacket {
      * Set Location.
      * @param value - new value.
      */
-    public void setLocation(BlockPosition value) {
+    public WrapperPlayClientTileNbtQuery setLocation(BlockPosition value) {
         handle.getBlockPositionModifier().write(0, value);
+        return this;
     }
     
 }

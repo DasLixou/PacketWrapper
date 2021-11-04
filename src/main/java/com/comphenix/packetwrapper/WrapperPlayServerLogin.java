@@ -57,8 +57,9 @@ public class WrapperPlayServerLogin extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerLogin setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -98,8 +99,9 @@ public class WrapperPlayServerLogin extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setGamemode(NativeGameMode value) {
+	public WrapperPlayServerLogin setGamemode(NativeGameMode value) {
 		handle.getGameModes().write(0, value);
+		return this;
 	}
 
 	/**
@@ -118,8 +120,9 @@ public class WrapperPlayServerLogin extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setDimension(int value) {
+	public WrapperPlayServerLogin setDimension(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -140,8 +143,9 @@ public class WrapperPlayServerLogin extends AbstractPacket {
 	 * @param value - new value.
 	 */
 	@Removed
-	public void setDifficulty(Difficulty value) {
+	public WrapperPlayServerLogin setDifficulty(Difficulty value) {
 		handle.getDifficulties().write(0, value);
+		return this;
 	}
 
 	/**
@@ -160,8 +164,9 @@ public class WrapperPlayServerLogin extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setMaxPlayers(int value) {
+	public WrapperPlayServerLogin setMaxPlayers(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -180,8 +185,9 @@ public class WrapperPlayServerLogin extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setLevelType(WorldType value) {
+	public WrapperPlayServerLogin setLevelType(WorldType value) {
 		handle.getWorldTypeModifier().write(0, value);
+		return this;
 	}
 
 	/**
@@ -198,7 +204,8 @@ public class WrapperPlayServerLogin extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setReducedDebugInfo(boolean value) {
+	public WrapperPlayServerLogin setReducedDebugInfo(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 }

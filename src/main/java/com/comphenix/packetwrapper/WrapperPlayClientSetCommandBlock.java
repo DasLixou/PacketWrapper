@@ -48,8 +48,9 @@ public class WrapperPlayClientSetCommandBlock extends AbstractPacket {
      * Set Location.
      * @param value - new value.
      */
-    public void setLocation(BlockPosition value) {
+    public WrapperPlayClientSetCommandBlock setLocation(BlockPosition value) {
         handle.getBlockPositionModifier().writeSafely(0,  value);
+        return this;
     }
     
     /**
@@ -64,8 +65,9 @@ public class WrapperPlayClientSetCommandBlock extends AbstractPacket {
      * Set Command.
      * @param value - new value.
      */
-    public void setCommand(String value) {
+    public WrapperPlayClientSetCommandBlock setCommand(String value) {
         handle.getStrings().write(0, value);
+        return this;
     }
 
 	/**
@@ -75,32 +77,36 @@ public class WrapperPlayClientSetCommandBlock extends AbstractPacket {
     	return handle.getBooleans().read(0);
     }
 
-    public void setTrackOutput(boolean value) {
+    public WrapperPlayClientSetCommandBlock setTrackOutput(boolean value) {
 		handle.getBooleans().write(0, value);
+        return this;
     }
 
     public boolean isConditional() {
 	    return handle.getBooleans().read(1);
     }
 
-    public void setConditional(boolean value) {
+    public WrapperPlayClientSetCommandBlock setConditional(boolean value) {
 	    handle.getBooleans().write(1, value);
+        return this;
     }
 
     public boolean isAutomatic() {
 	    return handle.getBooleans().read(2);
     }
 
-    public void setAutomatic(boolean value) {
+    public WrapperPlayClientSetCommandBlock setAutomatic(boolean value) {
 	    handle.getBooleans().write(2, value);
+        return this;
     }
 
     public Mode getMode() {
 		return handle.getEnumModifier(Mode.class, MinecraftReflection.getMinecraftClass("TileEntityCommand$Type")).readSafely(0);
     }
 
-    public void setMode(Mode mode) {
+    public WrapperPlayClientSetCommandBlock setMode(Mode mode) {
 	    handle.getEnumModifier(Mode.class, MinecraftReflection.getMinecraftClass("TileEntityCommand$Type")).writeSafely(0, mode);
+        return this;
     }
 
     public enum Mode {

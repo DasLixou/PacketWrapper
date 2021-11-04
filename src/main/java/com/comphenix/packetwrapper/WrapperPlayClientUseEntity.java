@@ -73,8 +73,9 @@ public class WrapperPlayClientUseEntity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setTargetID(int value) {
+	public WrapperPlayClientUseEntity setTargetID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -91,8 +92,9 @@ public class WrapperPlayClientUseEntity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setType(EntityUseAction value) {
+	public WrapperPlayClientUseEntity setType(EntityUseAction value) {
 		handle.getEntityUseActions().write(0, value);
+		return this;
 	}
 
 	/**
@@ -111,7 +113,8 @@ public class WrapperPlayClientUseEntity extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setTargetVector(Vector value) {
+	public WrapperPlayClientUseEntity setTargetVector(Vector value) {
 		handle.getVectors().write(0, value);
+		return this;
 	}
 }

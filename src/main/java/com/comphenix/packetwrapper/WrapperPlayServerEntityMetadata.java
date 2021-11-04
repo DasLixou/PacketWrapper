@@ -57,8 +57,9 @@ public class WrapperPlayServerEntityMetadata extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerEntityMetadata setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -95,7 +96,8 @@ public class WrapperPlayServerEntityMetadata extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setMetadata(List<WrappedWatchableObject> value) {
+	public WrapperPlayServerEntityMetadata setMetadata(List<WrappedWatchableObject> value) {
 		handle.getWatchableCollectionModifier().write(0, value);
+		return this;
 	}
 }

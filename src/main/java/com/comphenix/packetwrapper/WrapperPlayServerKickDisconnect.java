@@ -52,8 +52,9 @@ public class WrapperPlayServerKickDisconnect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setReason(WrappedChatComponent value) {
+	public WrapperPlayServerKickDisconnect setReason(WrappedChatComponent value) {
 		handle.getChatComponents().write(0, value);
+		return this;
 	}
 
 }

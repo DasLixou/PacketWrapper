@@ -48,8 +48,9 @@ public class WrapperPlayClientItemName extends AbstractPacket {
      * Set Item name.
      * @param value - new value.
      */
-    public void setItemName(String value) {
+    public WrapperPlayClientItemName setItemName(String value) {
         handle.getStrings().write(0, value);
+        return this;
     }
     
 }

@@ -50,8 +50,9 @@ public class WrapperLoginServerSetCompression extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setThreshold(int value) {
+	public WrapperLoginServerSetCompression setThreshold(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 }

@@ -53,8 +53,9 @@ public class WrapperPlayServerAnimation extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setEntityID(int value) {
+	public WrapperPlayServerAnimation setEntityID(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -93,8 +94,9 @@ public class WrapperPlayServerAnimation extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setAnimation(int value) {
+	public WrapperPlayServerAnimation setAnimation(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 }

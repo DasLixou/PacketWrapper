@@ -49,8 +49,9 @@ public class WrapperPlayServerHeldItemSlot extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setSlot(int value) {
+	public WrapperPlayServerHeldItemSlot setSlot(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 }

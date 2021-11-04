@@ -53,12 +53,14 @@ public class WrapperLoginServerDisconnect extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setReason(WrappedChatComponent value) {
+	public WrapperLoginServerDisconnect setReason(WrappedChatComponent value) {
 		handle.getChatComponents().write(0, value);
+		return this;
 	}
 
 	@Deprecated
-	public void setJsonData(WrappedChatComponent value) {
+	public WrapperLoginServerDisconnect setJsonData(WrappedChatComponent value) {
 		setReason(value);
+		return this;
 	}
 }

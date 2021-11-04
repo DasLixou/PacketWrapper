@@ -53,8 +53,9 @@ public class WrapperPlayServerMapChunk extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setChunkX(int value) {
+	public WrapperPlayServerMapChunk setChunkX(int value) {
 		handle.getIntegers().write(0, value);
+		return this;
 	}
 
 	/**
@@ -73,8 +74,9 @@ public class WrapperPlayServerMapChunk extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setChunkZ(int value) {
+	public WrapperPlayServerMapChunk setChunkZ(int value) {
 		handle.getIntegers().write(1, value);
+		return this;
 	}
 
 	/**
@@ -95,8 +97,9 @@ public class WrapperPlayServerMapChunk extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setGroundUpContinuous(boolean value) {
+	public WrapperPlayServerMapChunk setGroundUpContinuous(boolean value) {
 		handle.getBooleans().write(0, value);
+		return this;
 	}
 
 	/**
@@ -109,8 +112,9 @@ public class WrapperPlayServerMapChunk extends AbstractPacket {
 		return handle.getIntegers().read(2);
 	}
 
-	public void setBitmask(int value) {
+	public WrapperPlayServerMapChunk setBitmask(int value) {
 		handle.getIntegers().write(2, value);
+		return this;
 	}
 
 	/**
@@ -121,8 +125,9 @@ public class WrapperPlayServerMapChunk extends AbstractPacket {
 		return handle.getByteArrays().read(0);
 	}
 
-	public void setData(byte[] value) {
+	public WrapperPlayServerMapChunk setData(byte[] value) {
 		handle.getByteArrays().write(0, value);
+		return this;
 	}
 
 	/**
@@ -132,7 +137,8 @@ public class WrapperPlayServerMapChunk extends AbstractPacket {
 		return handle.getListNbtModifier().read(0);
 	}
 
-	public void setTileEntities(List<NbtBase<?>> value) {
+	public WrapperPlayServerMapChunk setTileEntities(List<NbtBase<?>> value) {
 		handle.getListNbtModifier().write(0, value);
+		return this;
 	}
 }

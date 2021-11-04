@@ -52,7 +52,8 @@ public class WrapperPlayClientResourcePackStatus extends AbstractPacket {
 	 * 
 	 * @param value - new value.
 	 */
-	public void setResult(ResourcePackStatus value) {
+	public WrapperPlayClientResourcePackStatus setResult(ResourcePackStatus value) {
 		handle.getResourcePackStatus().write(0, value);
+		return this;
 	}
 }

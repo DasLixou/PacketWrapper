@@ -49,8 +49,9 @@ public class WrapperPlayServerNbtQuery extends AbstractPacket {
      * Set Transaction ID.
      * @param value - new value.
      */
-    public void setTransactionId(int value) {
+    public WrapperPlayServerNbtQuery setTransactionId(int value) {
         handle.getIntegers().write(0, value);
+        return this;
     }
     
     /**
@@ -67,8 +68,9 @@ public class WrapperPlayServerNbtQuery extends AbstractPacket {
      * Set NBT.
      * @param value - new value.
      */
-    public void setNbt(NbtBase<?> value) {
+    public WrapperPlayServerNbtQuery setNbt(NbtBase<?> value) {
         handle.getNbtModifier().write(0, value);
+        return this;
     }
     
 }
