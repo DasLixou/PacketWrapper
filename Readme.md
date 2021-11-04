@@ -1,5 +1,40 @@
 # PacketWrapper
 
+This Projekt is a fork and addition of this [Project](https://github.com/steviebeenz/PacketWrapper)
+
+### Whats new in DasLixou's version?
+
+> Normal PacketWrapper:
+````java
+    WrapperPlayServerEntityTeleport teleportPacket = new WrapperPlayServerEntityTeleport();
+
+    teleportPacket.setEntityID(entityPlayer.getId());
+    teleportPacket.setX(location.getX());
+    teleportPacket.setY(location.getY());
+    teleportPacket.setZ(location.getZ());
+    teleportPacket.setYaw(location.getYaw());
+    teleportPacket.setPitch(location.getPitch());
+    teleportPacket.setOnGround(false);
+
+    teleportPacket.sendPacket(player1);
+    teleportPacket.sendPacket(player2);
+````
+
+> DasLixou's PacketWrapper:
+````java
+    new WrapperPlayServerEntityTeleport()
+        .setEntityID(entityPlayer.getId())
+        .setX(location.getX())
+        .setY(location.getY())
+        .setZ(location.getZ())
+        .setYaw(location.getYaw())
+        .setPitch(location.getPitch())
+        .setOnGround(false)
+        .sendPacket(player1, player2);
+````
+
+### more info
+
 This is the official continuation of PacketWrapper by dmulloy2. The original version can be found [here](https://github.com/aadnk/PacketWrapper).
 
 When reading and writing packets in [ProtocolLib](http://www.spigotmc.org/resources/protocollib.1997/), it is necessary to know the order in which the fields are stored in memory. This requires you to decompile the Minecraft source code with [JD-GUI](http://jd.benow.ca/) or find it in the Spigot work directory (/work/decompile/), while decoding the meaning of a field by looking up an online [wiki](http://www.wiki.vg/Protocol) resource ([tutorial](http://forums.bukkit.org/threads/lib-1-4-6-protocollib-2-0-0-safely-and-easily-modify-sent-and-recieved-packets.101035/page-2#post-1366140)). It would be much easier if these packets could be accessed as any other normal Java bean. 
@@ -13,7 +48,26 @@ You can use PacketWrapper as a dependency if you wish, although it is **highly r
 * [ProtocolLib](http://www.spigotmc.org/resources/protocollib.1997/)
 
 ### Building
-You can compile this project yourself by using the latest version of Maven.
+Maven:
+````xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+  ...
+</repositories>
+````
+````xml
+<dependencies>
+    <dependency>
+        <groupId>com.github.daslixou</groupId>
+        <artifactId>PacketWrapper</artifactId>
+        <version>1.1</version>
+    </dependency>
+</dependencies>
+````
+
 
 
 ### Remarks
