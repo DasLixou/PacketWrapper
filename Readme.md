@@ -59,7 +59,7 @@ Maven:
     <dependency>
         <groupId>com.github.daslixou</groupId>
         <artifactId>PacketWrapper</artifactId>
-        <version>1.1</version>
+        <version>1.2</version>
     </dependency>
 </dependencies>
 ````
